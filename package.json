@@ -1,0 +1,25 @@
+{
+  "name": "invoke-script-private",
+  "version": "0.0.1-alfa",
+  "description": "invoke-script monorepo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "invoke-script"
+  ],
+  "author": "Vladimir Kalmykov <vladimirmorulus@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@ljharb/eslint-config": "^12.2.1",
+    "eslint": "^4.19.1",
+    "eslint-config-nodejs": "^2.0.0",
+    "eslint-config-recommended": "^2.0.0",
+    "lerna": "^3.4.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "private": true
+}

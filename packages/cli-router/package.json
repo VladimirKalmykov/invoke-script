@@ -1,0 +1,18 @@
+{
+  "name": "@invoke-script/cli-router",
+  "version": "0.0.1-alfa",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "invoke-script"
+  ],
+  "author": "Vladimir Kalmykov <vladimirmorulus@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@invoke-script/tools": "0.0.1-alfa",
+    "@invoke-script/cmd-create-script": "0.0.1-alfa"
+  }
+}

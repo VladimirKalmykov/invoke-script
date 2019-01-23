@@ -1,0 +1,25 @@
+{
+  "name": "@invoke-script/tools",
+  "version": "0.0.1-alfa",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "invoke-script"
+  ],
+  "author": "Vladimir Kalmykov <vladimirmorulus@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@invoke-script/tools": "0.0.1-alfa",
+    "chalk": "^2.4.2",
+    "chokidar": "^2.0.4",
+    "ini": "^1.3.5",
+    "minimist": "^1.2.0",
+    "prompt-confirm": "^2.0.4",
+    "shelljs": "^0.8.3",
+    "single-line-log": "^1.1.2",
+    "tmp": "^0.0.33"
+  }
+}
