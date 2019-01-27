@@ -54,7 +54,6 @@
         ],
         lines-around-directive: 2,
         lines-between-class-members: 2,
-        max-depth: 2,
         max-nested-callbacks: 2,
         max-statements: 0,
         max-statements-per-line: 2,
@@ -246,6 +245,7 @@
         valid-jsdoc: 0, // I use no jsondoc
         max-params: 0, // let me decide for myself
         max-lines: 0, // too hard for your computer brain?
-        prefer-destructuring: 0 // let onClick; onClick = obj.onClick?
+        prefer-destructuring: 0, // let onClick; onClick = obj.onClick?
+        max-depth: 0
     }
 }

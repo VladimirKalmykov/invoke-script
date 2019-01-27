@@ -1,7 +1,5 @@
-const Bailout = require("@invoke-script/tools/bailout");
+const Bailout = require("@invoke-script/core/bailout");
 const routes = [
-  require("./routes/create-script"),
-  require("./routes/list-scripts"),
   require("./routes/run-script"),
   require("./routes/run-remote-script")
 ];

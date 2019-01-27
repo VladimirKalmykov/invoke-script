@@ -1,5 +1,5 @@
 function listShortcuts() {
-  const appDir = require("@invoke-script/tools/resolve-system-path")();
+  const appDir = require("@invoke-script/core/resolve-system-path")();
 
   console.log("List shortcuts", appDir);
 }

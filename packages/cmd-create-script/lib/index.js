@@ -1,12 +1,12 @@
-const openTextEditor = require("@invoke-script/tools/open-text-editor");
-const Bailout = require("@invoke-script/tools/bailout");
-const parseScriptName = require("@invoke-script/tools/parse-script-name");
-const resolveScriptBinaryPath = require("@invoke-script/tools/resolve-script-binary-path");
-const input = require("@invoke-script/tools/input");
-const message = require("@invoke-script/tools/message");
-const pressAnyKey = require("@invoke-script/tools/press-any-key");
-const writeScript = require("@invoke-script/tools/write-script");
-const chalk = require("@invoke-script/tools/chalk");
+const openTextEditor = require("@invoke-script/core/open-text-editor");
+const Bailout = require("@invoke-script/core/bailout");
+const parseScriptName = require("@invoke-script/core/parse-script-name");
+const resolveScriptBinaryPath = require("@invoke-script/core/resolve-script-binary-path");
+const input = require("@invoke-script/core/input");
+const message = require("@invoke-script/core/message");
+const pressAnyKey = require("@invoke-script/core/press-any-key");
+const writeScript = require("@invoke-script/core/write-script");
+const chalk = require("@invoke-script/core/chalk");
 const minimist = require("minimist");
 
 module.exports = async function(argv) {

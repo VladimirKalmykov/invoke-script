@@ -12,6 +12,6 @@
   "author": "Vladimir Kalmykov <vladimirmorulus@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@invoke-script/tools": "0.0.1-alfa"
+    "@invoke-script/core": "0.0.1-alfa"
   }
 }

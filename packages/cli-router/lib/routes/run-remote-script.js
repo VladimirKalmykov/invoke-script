@@ -1,13 +1,13 @@
 function runRemoteScript(argv) {
   const {
-    parameters,
+    query,
     options,
     args
-  } = require("@invoke-script/tools/extract-argv")(argv);
+  } = require("@invoke-script/core/extract-argv")(argv);
 
-  if (parameters.length) {
+  if (query) {
     return require("@invoke-script/run")(
-      parameters[0],
+      query,
       options,
       args
     );
