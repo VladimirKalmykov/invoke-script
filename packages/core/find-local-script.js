@@ -24,6 +24,7 @@ module.exports = async function resolveScriptBinaryPath(name, options = {}) {
       scriptsPath,
       `${name}`
     );
+
     /* Check scripts path containes package.json */
     const packageJsonPath = path.join(
       scriptsPath,
@@ -33,10 +34,16 @@ module.exports = async function resolveScriptBinaryPath(name, options = {}) {
     if (fs.existsSync(packageJsonPath)) {
       const pj = require(packageJsonPath);
 
-      if (pj && typeof pj.bin === "object" && pj.bin[name]) {
-        return path.resolve(scriptsPath, pj.bin[name]);
+      if (pj && typeof pj.bin === "object") {
+        if (pj.bin[name]) {
+          return path.resolve(scriptsPath, pj.bin[name]);
+        }
+
+        continue; // eslint-disable-line
       }
-    } else if (fs.existsSync(scriptPath)) {
+    }
+
+    if (fs.existsSync(scriptPath)) {
       return scriptPath;
     }
   }

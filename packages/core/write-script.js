@@ -1,26 +1,44 @@
 const path = require("path");
-const resolveSystemPath = require("./resolve-system-path");
 const Bailout = require("./bailout");
 const shelljs = require("shelljs");
 const fs = require("fs");
 
-module.exports = async function writeScript(section, name, {
+/* TODO: get more possible shell veriant */
+function getExtByShell(shell) {
+  switch (shell) {
+  case "bash":
+  case "sh":
+    return ".bash";
+  case "node":
+    return ".js";
+  default:
+    return "";
+  }
+}
+
+module.exports = async function writeScript(scriptPath, {
+  name,
   code,
   shell = "bash",
   description,
+  ext,
   forceOverride
 }) {
-  const scriptsPath = resolveSystemPath("scripts");
-  const content = `#!/usr/bin/env ${shell}
-${code}`;
-
-  if (!fs.existsSync(path.join(scriptsPath, section))) {
-    throw new Bailout("You can not create script inside unexisten section.", 1, `You may create new section with command:
-    invoke --create-section <name> -d <description>
-`);
+  if (!name) {
+    throw new Bailout("Script name is required");
   }
 
-  const scriptPath = path.join(scriptsPath, section, name);
+  if (!code) {
+    throw new Bailout("Script code is required");
+  }
+
+  if (!code) {
+    throw new Bailout("Script description is required");
+  }
+
+  const extension = ext || getExtByShell();
+  const content = `#!/usr/bin/env ${shell}
+${code}`;
 
   if (!forceOverride && fs.existsSync(scriptPath)) {
     throw new Bailout("Script with a such name already exists");
@@ -32,14 +50,17 @@ ${code}`;
   fs.writeFileSync(
     path.join(scriptPath, "package.json"),
     JSON.stringify({
-      name: `${section}/${name}`,
+      name,
       description,
       bin: "main"
     })
   );
-  const binaryPath = path.join(scriptPath, "main");
-  // Create main
+  const binPath = path.join(scriptPath, "bin");
 
+  await fs.mkdirSync(binPath);
+  const binaryPath = path.join(binPath, `cli${extension}`);
+
+  // Create main
   fs.writeFileSync(
     binaryPath,
     content
