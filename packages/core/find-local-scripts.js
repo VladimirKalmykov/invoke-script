@@ -11,12 +11,12 @@ const minimatch = require("minimatch");
 
 module.exports = async function resolveLocalScripts(options = {}) {
   const {
-    group,
-    summary,
+    groupByLocation,
+    ditailed,
     match
   } = options;
 
-  const result = group ? {} : [];
+  const result = groupByLocation ? {} : [];
 
   const paths = await findParentDirs(".scripts", {
     cwd: options.cwd
@@ -34,7 +34,7 @@ module.exports = async function resolveLocalScripts(options = {}) {
     const scriptsPath = paths[i];
     let hereResult = result;
 
-    if (group) {
+    if (groupByLocation) {
       result[scriptsPath] = {
         path: scriptsPath,
         description: "",
@@ -66,11 +66,11 @@ module.exports = async function resolveLocalScripts(options = {}) {
           .filter(name => (match
             ? minimatch(name, match)
             : true))
-          /* Transform to summary if it's required by options.group */
+          /* Transform to ditailed output if it's required by options.group */
           .map(name => {
             const scriptPath = path.resolve(scriptsPath, packageJson.bin[name]);
 
-            return summary
+            return ditailed
               ? {
                 name,
                 path: scriptPath,
@@ -113,7 +113,7 @@ module.exports = async function resolveLocalScripts(options = {}) {
             continue; // eslint-disable-line
           }
         }
-        const info = summary
+        const info = ditailed
           ? {
             name: file,
             path: filepath,

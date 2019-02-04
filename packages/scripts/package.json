@@ -13,10 +13,12 @@
   "license": "MIT",
   "bin": {
     "ls": "bin/ls.js",
+    "which": "bin/which.js",
     "add-shortcut": "bin/add-shortcut.js"
   },
   "bin-descriptions": {
     "ls": "List all aviable scripts",
+    "which": "Determine a script location",
     "add-shortcut": "Add shortcut"
   },
   "dependencies": {
