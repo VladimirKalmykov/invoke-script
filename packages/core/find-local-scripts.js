@@ -74,6 +74,7 @@ module.exports = async function resolveLocalScripts(options = {}) {
               ? {
                 name,
                 path: scriptPath,
+                directory: scriptsPath,
                 description: packageJson["bin-descriptions"]
                   ? packageJson["bin-descriptions"][name] || ""
                   : ""
@@ -94,9 +95,11 @@ module.exports = async function resolveLocalScripts(options = {}) {
         const file = files[fi];
         const filepath = path.join(scriptsPath, file);
         let description = "";
+        let directory = false;
         // Validate script
 
         if (dirExists(filepath)) {
+          directory = filepath;
           /*
            * If script is a file
            * Check for its package.json
@@ -117,6 +120,7 @@ module.exports = async function resolveLocalScripts(options = {}) {
           ? {
             name: file,
             path: filepath,
+            directory,
             description
           }
           : file;
