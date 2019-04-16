@@ -4,6 +4,7 @@ const glob = require("./glob");
 const resolveSystemPath = require("./resolve-system-path");
 const dirExists = require("./dir-exists");
 const findParentDirs = require("./find-parent-dirs");
+const matchKeywords = require("./match-keywords");
 const minimatch = require("minimatch");
 /**
  * Search for shortcut file
@@ -13,7 +14,8 @@ module.exports = async function resolveLocalScripts(options = {}) {
   const {
     groupByLocation,
     ditailed,
-    match
+    match,
+    keywords
   } = options;
 
   const result = groupByLocation ? {} : [];
@@ -54,6 +56,18 @@ module.exports = async function resolveLocalScripts(options = {}) {
     if (fs.existsSync(packageJsonPath)) {
       try {
         packageJson = require(packageJsonPath);
+
+        // Match keywords
+        if (keywords && keywords.length > 0 && typeof packageJson.bin === "object") {
+          if (
+            !(packageJson.keywords &&
+            Array.isArray(packageJson.keywords)) ||
+            !matchKeywords(keywords, packageJson.keywords)
+          ) {
+            continue; // eslint-disable-line
+          }
+        }
+
         result[scriptsPath].description = packageJson.description;
       } catch (e) {
         // Invalid package.json
@@ -110,11 +124,28 @@ module.exports = async function resolveLocalScripts(options = {}) {
               "package.json"
             ));
 
+            // Match keywords
+            if (keywords && keywords.length > 0) {
+              if (
+                !(packageJson.keywords &&
+                Array.isArray(packageJson.keywords)) ||
+                !matchKeywords(keywords, packageJson.keywords)
+              ) {
+                continue; // eslint-disable-line
+              }
+            }
+
             description = packageJson.description || "";
           } catch (e) {
             // Package.json have not founded
             continue; // eslint-disable-line
           }
+        } else if (keywords && keywords.length > 0) {
+          /*
+           * Single files can not have keywords, so it will be exlcuded
+           * from output if user has specified keywords
+           */
+          continue; // eslint-disable-line
         }
         const info = ditailed
           ? {

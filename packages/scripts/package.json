@@ -13,13 +13,17 @@
   "license": "MIT",
   "bin": {
     "ls": "bin/ls.js",
+    "ls-loc": "bin/ls-loc.js",
     "which": "bin/which.js",
-    "add-shortcut": "bin/add-shortcut.js"
+    "info": "bin/info.js",
+    "create-script": "bin/create-script.js"
   },
   "bin-descriptions": {
     "ls": "List all aviable scripts",
+    "ls-loc": "List all aviable script locations",
     "which": "Determine a script location",
-    "add-shortcut": "Add shortcut"
+    "info": "Get script detailed info",
+    "create-script": "Create local script"
   },
   "dependencies": {
     "cliui": "^4.1.0"

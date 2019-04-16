@@ -13,6 +13,12 @@ const parseArgv = require(path.join(
   "parse-argv"
 ));
 
+function parseKeywords(rawKeywords) {
+  return rawKeywords
+    .split(",")
+    .map(keyword => keyword.trim());
+}
+
 const firstArg = (process.argv[2] || "").replace(/[./]/g, "");
 
 /* Help */
@@ -26,7 +32,8 @@ Options:
   -d, --ditailed) Show script description
   -r, --realpath) Display only paths
   -j, --json) Print result as JSON
-  -n, --limit) Limited output (you need to specify count)
+  -n, --limit) Max count
+  -k, --keywords) List only matched keywords
 `);
   process.exit(0);
 }
@@ -41,8 +48,13 @@ const options = {
   ditailed: args.d || args.ditailed,
   json: args.j || args.json,
   realpath: args.r || args.realpath,
-  limit: args.n || args.limit
+  limit: args.n || args.limit,
+  keywords: args.k || args.keywords
 };
+
+const keywords = options.keywords
+  ? parseKeywords(options.keywords)
+  : false;
 
 const findLocalScripts = require(path.join(
   process.env.INVOKE_SCRIPT_CORE,
@@ -74,7 +86,8 @@ findLocalScripts({
   cwd: process.cwd(),
   ditailed: options.ditailed || options.realpath,
   groupByLocation: options.groupByLocation,
-  match: firstParam
+  match: firstParam,
+  keywords: keywords || false
 })
   /* Transform result */
   .then(result => {

@@ -8,12 +8,12 @@ const echo = require(path.join(
   process.env.INVOKE_SCRIPT_CORE,
   "echo"
 ));
-const target = process.argv[2] || "";
+const target = (process.argv[2] || "").replace(/[./]/g, "");
 
 if (target === "--help") {
   echo(`List all aviable scripts
 
-${echo.strong("invoke which")} <name>
+${echo.strong("invoke ls")} <pattern> [...options]
 `);
   process.exit(0);
 } else if (!target) {
@@ -22,21 +22,27 @@ ${echo.strong("invoke which")} <name>
   process.exit(1);
 }
 
+const args = require("minimist")(process.argv.slice(2));
+
 const cwd = process.cwd();
 
-const scriptPathResolver = path.isAbsolute(target)
-  ? Promise.resolve(target)
-  : require(path.join(
-    process.env.INVOKE_SCRIPT_CORE,
-    "find-local-script"
-  ))(target, {
-    cwd
-  });
+const findLocalScript = require(path.join(
+  process.env.INVOKE_SCRIPT_CORE,
+  "find-local-script"
+));
 
-scriptPathResolver
-  .then(pathname => {
-    if (pathname) {
-      echo(pathname);
+findLocalScript(target, {
+  cwd,
+  detailed: true
+})
+  .then(info => {
+    if (info) {
+      if (args.j || args.json) {
+        console.log(JSON.stringify(info, null, 1)); // eslint-disable-line
+      } else {
+        echo(Object.keys(info).map(key => `${key}\t${info[key]}`)
+          .join("\n"));
+      }
     } else {
       echo(`Script ${target} is not exists`);
       process.exit(1);

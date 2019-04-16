@@ -18,22 +18,14 @@ function getExtByShell(shell) {
 
 module.exports = async function writeScript(scriptPath, {
   name,
-  code,
+  code = "",
   shell = "bash",
-  description,
+  description = "",
   ext,
   forceOverride
 }) {
   if (!name) {
     throw new Bailout("Script name is required");
-  }
-
-  if (!code) {
-    throw new Bailout("Script code is required");
-  }
-
-  if (!code) {
-    throw new Bailout("Script description is required");
   }
 
   const extension = ext || getExtByShell();
@@ -44,6 +36,8 @@ ${code}`;
     throw new Bailout("Script with a such name already exists");
   }
 
+  const binaryName = `cli${extension}`;
+
   // Create dir
   await fs.mkdirSync(scriptPath);
   // Create package.json
@@ -52,13 +46,13 @@ ${code}`;
     JSON.stringify({
       name,
       description,
-      bin: "main"
-    })
+      bin: `bin/${binaryName}`
+    }, null, 1)
   );
   const binPath = path.join(scriptPath, "bin");
 
   await fs.mkdirSync(binPath);
-  const binaryPath = path.join(binPath, `cli${extension}`);
+  const binaryPath = path.join(binPath, binaryName);
 
   // Create main
   fs.writeFileSync(
@@ -67,4 +61,9 @@ ${code}`;
   );
   // Set chmod +x
   shelljs.chmod("+x", binaryPath);
+
+  return {
+    directory: scriptPath,
+    binary: binaryPath
+  };
 };

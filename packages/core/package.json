@@ -12,7 +12,6 @@
   "author": "Vladimir Kalmykov <vladimirmorulus@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@invoke-script/core": "0.0.1-alfa",
     "@invoke-script/scripts": "0.0.1-alfa",
     "chalk": "^2.4.2",
     "chokidar": "^2.0.4",
