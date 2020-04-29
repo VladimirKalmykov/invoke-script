@@ -1,0 +1,21 @@
+commands:
+  get:
+    protocol: fs
+    uri: ./get
+    shell: invoke
+    description: Get registry if exists
+  add:
+    protocol: fs
+    uri: ./add
+    shell: invoke
+    description: Add registry to local machine
+  remove:
+    protocol: fs
+    uri: ./remove
+    shell: invoke
+    description: Remove registry from local machine
+  create:
+    protocol: fs
+    uri: ./create
+    shell: invoke
+    description: Create new registry

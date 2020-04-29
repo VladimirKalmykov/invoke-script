@@ -78,8 +78,11 @@ module.exports = async function findLocalScript(name, options = {}) {
         pj = null;
       }
 
-      if (pj && typeof pj.bin === "string") {
-        const binary = path.resolve(scriptPath, pj.bin);
+      /* eslint-disable no-mixed-operators */
+      if (pj && (typeof pj.bin === "string" || typeof pj.bin === "object" && Object.keys(pj.bin).length > 0)) {
+        const binary = typeof pj.bin === "string"
+          ? path.resolve(scriptPath, pj.bin)
+          : path.resolve(scriptPath, Object.values(pj.bin)[0]);
 
         if (detailed) {
           return {

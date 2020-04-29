@@ -1,0 +1,7 @@
+name: Invoke built-in commands
+commands:
+  registry:
+    protocol: fs
+    uri: ./commands/registry
+    shell: invoke
+    description: Manage invoke registries

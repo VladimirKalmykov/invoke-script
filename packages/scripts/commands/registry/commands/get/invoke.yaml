@@ -1,0 +1,5 @@
+commands:
+  DEFAULT:
+    protocol: fs
+    uri: bin/get.js
+    shell: invoke node

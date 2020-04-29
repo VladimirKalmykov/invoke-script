@@ -16,14 +16,18 @@
     "ls-loc": "bin/ls-loc.js",
     "which": "bin/which.js",
     "info": "bin/info.js",
-    "create-script": "bin/create-script.js"
+    "create-script": "bin/create-script.js",
+    "home": "bin/home.js",
+    "edit": "bin/edit.js"
   },
   "bin-descriptions": {
     "ls": "List all aviable scripts",
     "ls-loc": "List all aviable script locations",
     "which": "Determine a script location",
     "info": "Get script detailed info",
-    "create-script": "Create local script"
+    "create-script": "Create local script",
+    "home": "Get invoke-script home directory",
+    "edit": "Edit script with your favour editor"
   },
   "dependencies": {
     "cliui": "^4.1.0"

@@ -5,7 +5,6 @@ const router = require("@invoke-script/cli-router");
 // Check for built-in commands mode
 router(process.argv.slice(2))
   .then(result => {
-    console.log("result", result);
     if (result) {
       console.log(result);
     }
