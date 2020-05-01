@@ -17,6 +17,7 @@ module.exports = async function invokeScript(query, options, args) {
     return scriptBinaryPath;
   }
 
+
   await runScript(scriptBinaryPath, args, {
     env: Object.create(process.env)
   });

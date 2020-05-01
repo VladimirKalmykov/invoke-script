@@ -1,3 +1,4 @@
+const Bailout = require("./bailout");
 const {
   spawn
 } = require("child_process");
@@ -13,15 +14,34 @@ module.exports = function runScript(scriptPath, args, options = {}) {
   env.INVOKE_SCRIPT_CORE = __dirname;
 
   return new Promise(resolve => {
-    const child = spawn(scriptPath, args, {
-      stdio: [
-        "inherit",
-        "inherit",
-        "inherit"
-      ],
-      cwd: process.cwd(),
-      env
-    });
+    let child;
+    switch(process.platform) {
+      case 'win32':
+        child = spawn('node', [scriptPath, ...args], {
+          stdio: [
+            "inherit",
+            "inherit",
+            "inherit"
+          ],
+          cwd: process.cwd(),
+          env
+        });
+      break;
+      case 'darwin':
+        child = spawn(scriptPath, args, {
+          stdio: [
+            "inherit",
+            "inherit",
+            "inherit"
+          ],
+          cwd: process.cwd(),
+          env
+        });
+      break;
+      default:
+        throw new Bailout("Your platform is not supported");
+      break;
+    }
 
     child.on("exit", code => {
       process.exit(code);
