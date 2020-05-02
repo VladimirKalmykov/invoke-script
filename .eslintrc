@@ -30,7 +30,7 @@
         computed-property-spacing: 2,
         consistent-this: 2,
         curly: 2,
-        default-case: 2,
+        default-case: 2, 
         dot-notation: 2,
         eol-last: 2,
         eqeqeq: 2,
@@ -48,10 +48,6 @@
         key-spacing: 2,
         keyword-spacing: 2,
         line-comment-position: 2,
-        linebreak-style: [
-            2,
-            unix
-        ],
         lines-around-directive: 2,
         lines-between-class-members: 2,
         max-nested-callbacks: 2,
@@ -246,6 +242,7 @@
         max-params: 0, // let me decide for myself
         max-lines: 0, // too hard for your computer brain?
         prefer-destructuring: 0, // let onClick; onClick = obj.onClick?
-        max-depth: 0
+        max-depth: 0,
+        linebreak-style: 0 // Git will handle it for us
     }
 }
