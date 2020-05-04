@@ -18,7 +18,8 @@
     "info": "bin/info.js",
     "create-script": "bin/create-script.js",
     "home": "bin/home.js",
-    "edit": "bin/edit.js"
+    "edit": "bin/edit.js",
+    "menu": "bin/menu/menu.js"
   },
   "bin-descriptions": {
     "ls": "List all aviable scripts",
@@ -27,9 +28,13 @@
     "info": "Get script detailed info",
     "create-script": "Create local script",
     "home": "Get invoke-script home directory",
-    "edit": "Edit script with your favour editor"
+    "edit": "Edit script with your favour editor",
+    "menu": "Select and execute script from menu"
   },
   "dependencies": {
-    "cliui": "^4.1.0"
+    "cliui": "^4.1.0",
+    "log-update": "^4.0.0",
+    "redux": "^4.0.5",
+    "string-argv": "^0.3.1"
   }
 }

@@ -1,5 +1,6 @@
 const Bailout = require("@invoke-script/core/bailout");
 const routes = [
+  require("./routes/run-empty"),
   require("./routes/run-file"),
   require("./routes/run-script"),
   require("./routes/run-remote-script")

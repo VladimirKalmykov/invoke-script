@@ -1,4 +1,4 @@
-#!/usr/bin/env node --inspect --inspect-brk
+#!/usr/bin/env node
 const chalk = require("chalk");
 const router = require("@invoke-script/cli-router");
 

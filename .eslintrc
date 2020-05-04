@@ -53,10 +53,6 @@
         max-nested-callbacks: 2,
         max-statements: 0,
         max-statements-per-line: 2,
-        multiline-comment-style: [
-            2,
-            starred-block
-        ],
         new-cap: 2,
         new-parens: 2,
         newline-after-var: 2,
@@ -243,6 +239,7 @@
         max-lines: 0, // too hard for your computer brain?
         prefer-destructuring: 0, // let onClick; onClick = obj.onClick?
         max-depth: 0,
-        linebreak-style: 0 // Git will handle it for us
+        linebreak-style: 0, // Git will handle it for us
+        multiline-comment-style: 0 // Leave it up to me
     }
 }
