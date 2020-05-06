@@ -1,11 +1,16 @@
 const path = require("path");
 const fs = require("fs");
+const minimatch = require("minimatch");
 const glob = require("./glob");
 const resolveSystemPath = require("./resolve-system-path");
 const dirExists = require("./dir-exists");
 const findParentDirs = require("./find-parent-dirs");
 const matchKeywords = require("./match-keywords");
-const minimatch = require("minimatch");
+const defaultStats = require("./defaults/stats");
+const defaultScriptStats = require("./defaults/scriptStats");
+const {
+  SYSTEM_STATS_FILENAME
+} = require("./constants");
 /**
  * Search for shortcut file
  */
@@ -15,11 +20,20 @@ module.exports = async function resolveLocalScripts(options = {}) {
     groupByLocation,
     ditailed,
     match,
-    keywords,
-    sortDir = "ASC"
+    keywords
   } = options;
 
-  const result = groupByLocation ? {} : [];
+  /* Get stats file */
+  const statsPath = await resolveSystemPath(SYSTEM_STATS_FILENAME);
+  let stats;
+
+  try {
+    stats = require(statsPath);
+  } catch (e) {
+    stats = defaultStats;
+  }
+
+  let result = groupByLocation ? {} : [];
 
   /* Define paths in order of from */
   const paths = await findParentDirs(".scripts", {
@@ -30,8 +44,8 @@ module.exports = async function resolveLocalScripts(options = {}) {
   const customScriptsPath = await resolveSystemPath("scripts");
   const shortcutsPath = await resolveSystemPath("shortcuts");
 
-  paths.unshift(shortcutsPath);
-  paths.unshift(customScriptsPath);
+  paths.push(shortcutsPath);
+  paths.push(customScriptsPath);
   paths.unshift(builtInScripts);
 
   for (let i = 0; i < paths.length; i++) {
@@ -86,16 +100,15 @@ module.exports = async function resolveLocalScripts(options = {}) {
           .map(name => {
             const scriptPath = path.resolve(scriptsPath, packageJson.bin[name]);
 
-            return ditailed
-              ? {
-                name,
-                path: scriptPath,
-                directory: scriptsPath,
-                description: packageJson["bin-descriptions"]
-                  ? packageJson["bin-descriptions"][name] || ""
-                  : ""
-              }
-              : name;
+            return {
+              name,
+              path: scriptPath,
+              directory: scriptsPath,
+              description: packageJson["bin-descriptions"]
+                ? packageJson["bin-descriptions"][name] || ""
+                : "",
+              stats: stats.scripts[scriptPath] || defaultScriptStats
+            };
           });
 
         hereResult.push(...scripts);
@@ -149,18 +162,26 @@ module.exports = async function resolveLocalScripts(options = {}) {
            */
           continue; // eslint-disable-line
         }
-        const info = ditailed
-          ? {
-            name: file,
-            path: filepath,
-            directory,
-            description
-          }
-          : file;
+        const info = {
+          name: file,
+          path: filepath,
+          directory,
+          description,
+          stats: stats.scripts[filepath] || defaultScriptStats
+        };
 
         hereResult.push(info);
       }
     }
+  }
+
+  /* Sort by rating */
+  if (!groupByLocation) {
+    result.sort((script1, script2) => script2.stats.executedTimes - script1.stats.executedTimes);
+  }
+
+  if (!ditailed) {
+    result = result.map(scriptInfo => scriptInfo.name);
   }
 
   return result;

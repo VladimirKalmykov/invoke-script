@@ -29,7 +29,7 @@ ${echo.strong("invoke ls")} <pattern> [...options]
 
 Options:
   -g, --group-by-location) Group output by the scripts location
-  -d, --ditailed) Show script description
+  -d, --ditailed) Show script description and stats
   -r, --realpath) Display only paths
   -j, --json) Print result as JSON
   -n, --limit) Max count
@@ -71,10 +71,12 @@ const scriptRenderer = plainResult
   ? scriptName => scriptName
   : script => {
     const {
-      name, description
+      name,
+      description,
+      stats
     } = script;
 
-    return `${name} \t${echo.soft(description)}`;
+    return `${name} \t${echo.soft(description)} \t${echo.soft(stats.executedTimes)}`;
   };
 
 // Extract path from script data
@@ -145,6 +147,7 @@ findLocalScripts({
     let output = [];
 
     if (options.groupByLocation) {
+      output.push(echo.soft.bold("Name \tDescription \tExecuted"));
       Object.values(result).forEach(group => {
         if (group.scripts.length) {
           output.push(`${echo.strong(group.description || group.path)}`);

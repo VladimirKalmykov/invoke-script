@@ -46,6 +46,7 @@ module.exports = async function findLocalScript(name, options = {}) {
               return {
                 name,
                 binary,
+                path: binary,
                 directory: scriptsPath,
                 description: pj["bin-descriptions"]
                   ? pj["bin-descriptions"][name] || ""
@@ -88,6 +89,7 @@ module.exports = async function findLocalScript(name, options = {}) {
           return {
             name,
             binary,
+            path: scriptPath,
             directory: scriptPath,
             description: pj.description || ""
           };
@@ -104,6 +106,7 @@ module.exports = async function findLocalScript(name, options = {}) {
         return {
           name,
           binary: scriptPath,
+          path: scriptPath,
           directory: null,
           description: ""
         };
