@@ -11,6 +11,7 @@ module.exports.ACTIONS = {
   MOVE_LEFT: "MOVE_LEFT",
   SET_PHASE: "SET_PHASE",
   RUN_SCRIPT: "RUN_SCRIPT",
+  SET_HELP_INFO: "SET_HELP_INFO",
   LOG: "LOG"
 };
 

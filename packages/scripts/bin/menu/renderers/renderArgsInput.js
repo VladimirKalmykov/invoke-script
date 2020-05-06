@@ -5,7 +5,6 @@ const chalk = require(path.join(
   "chalk"
 ));
 
-
 module.exports = function renderArgsInput(state) {
   const script = state.scripts[state.selectedScriptIndex];
 
@@ -13,5 +12,8 @@ module.exports = function renderArgsInput(state) {
     ? `${state.input.substring(0, state.inputCaretPos)}${chalk.inverse(state.input[state.inputCaretPos] || " ")}${state.input.substring(state.inputCaretPos + 1)}`
     : state.input;
 
-  return `${chalk.bgCyan.black.bold("Invoke:")} > ${chalk.bold(script.name)} ${inputText}`;
+  return `${chalk.bgCyan.black.bold("Enter args")} > ${chalk.bold(script.name)} ${inputText}
+
+${chalk.gray(state.helpInfo)}
+  `;
 };

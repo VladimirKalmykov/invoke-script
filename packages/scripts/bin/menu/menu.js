@@ -37,7 +37,6 @@ const firstArg = (process.argv[2] || "").replace(/[./]/g, "");
 
 const args = parseArgv(process.argv);
 
-/* Help */
 if (firstArg === "--help") {
   echo(`Select and run script from menu
   
@@ -46,15 +45,6 @@ if (firstArg === "--help") {
   process.exit(0);
 }
 
-/*
- * stdin.on("keypress", (chunk, key) => {
- *   process.stdout.write(`Get Chunk: ${chunk}\n`);
- *   if (key && key.ctrl && key.name == "c") {
- *     process.exit();
- *   }
- * });
- */
-
 const reducer = (state = {
   phase: PHASES.SELECT_SCRIPT,
   input: "",
@@ -62,6 +52,7 @@ const reducer = (state = {
   scripts: [],
   selectedScriptIndex: 0,
   debugLog: {},
+  helpInfo: "No help info provided",
   args
 }, action) => {
   switch (action.type) {
@@ -72,6 +63,11 @@ const reducer = (state = {
         ...state.debugLog,
         [action.name]: action.value
       }
+    };
+  case ACTIONS.SET_HELP_INFO:
+    return {
+      ...state,
+      helpInfo: action.value
     };
   case ACTIONS.SET_PHASE:
     return {
@@ -107,12 +103,3 @@ store.subscribe(() => renderer(store));
 store.dispatch({
   type: ACTIONS.START
 });
-/*
- * findLocalScripts({
- * cwd: process.cwd(),
- * ditailed: options.ditailed || options.realpath,
- * groupByLocation: options.groupByLocation,
- * match: firstParam,
- * keywords: keywords || false
- * })
- */

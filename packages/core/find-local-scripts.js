@@ -15,11 +15,13 @@ module.exports = async function resolveLocalScripts(options = {}) {
     groupByLocation,
     ditailed,
     match,
-    keywords
+    keywords,
+    sortDir = "ASC"
   } = options;
 
   const result = groupByLocation ? {} : [];
 
+  /* Define paths in order of from */
   const paths = await findParentDirs(".scripts", {
     cwd: options.cwd
   });

@@ -7,7 +7,7 @@ const {
   parseArgsStringToArgv
 } = require("string-argv");
 const {
-  spawn
+  exec
 } = require("child_process");
 
 const findLocalScripts = require(path.join(
@@ -64,6 +64,27 @@ function phaseMiddleware(store, action) {
       }
       break;
     default:
+    case ACTIONS.SET_PHASE:
+      if (action.value === PHASES.ENTER_ARGS) {
+        /* Load script info */
+        exec(`invoke ${state.scripts[state.selectedScriptIndex].path} --help`, {
+          cwd: process.cwd(),
+          charset: "utf-8"
+        }, (error, data) => {
+          if (!error) {
+            store.dispatch({
+              type: ACTIONS.SET_HELP_INFO,
+              value: data
+            });
+          } else {
+            store.dispatch({
+              type: ACTIONS.LOG,
+              name: "error",
+              value: error.message
+            });
+          }
+        });
+      }
       break;
     }
   } else if (state.phase === PHASES.ENTER_ARGS) {
