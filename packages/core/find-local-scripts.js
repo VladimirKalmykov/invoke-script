@@ -104,6 +104,7 @@ module.exports = async function resolveLocalScripts(options = {}) {
               name,
               path: scriptPath,
               directory: scriptsPath,
+              location: scriptsPath,
               description: packageJson["bin-descriptions"]
                 ? packageJson["bin-descriptions"][name] || ""
                 : "",
@@ -165,6 +166,7 @@ module.exports = async function resolveLocalScripts(options = {}) {
         const info = {
           name: file,
           path: filepath,
+          location: scriptsPath,
           directory,
           description,
           stats: stats.scripts[filepath] || defaultScriptStats
@@ -173,11 +175,6 @@ module.exports = async function resolveLocalScripts(options = {}) {
         hereResult.push(info);
       }
     }
-  }
-
-  /* Sort by rating */
-  if (!groupByLocation) {
-    result.sort((script1, script2) => script2.stats.executedTimes - script1.stats.executedTimes);
   }
 
   if (!ditailed) {

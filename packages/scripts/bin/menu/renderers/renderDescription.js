@@ -7,8 +7,8 @@ const chalk = require(path.join(
 
 
 module.exports = function renderDescription(state) {
-  const activeScript = state.selectedScriptIndex >= 0
-    ? state.scripts[state.selectedScriptIndex]
+  const activeScript = state.scriptGroups.length > state.selectedScriptGroupIndex && state.scriptGroups[state.selectedScriptGroupIndex].scripts.length > state.selectedScriptIndex
+    ? state.scriptGroups[state.selectedScriptGroupIndex].scripts[state.selectedScriptIndex]
     : null;
 
   if (activeScript) {

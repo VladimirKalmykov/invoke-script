@@ -6,7 +6,7 @@ const chalk = require(path.join(
 ));
 
 module.exports = function renderArgsInput(state) {
-  const script = state.scripts[state.selectedScriptIndex];
+  const script = state.scriptGroups[state.selectedScriptGroupIndex].scripts[state.selectedScriptIndex];
 
   const inputText = state.inputCaretPos >= 0
     ? `${state.input.substring(0, state.inputCaretPos)}${chalk.inverse(state.input[state.inputCaretPos] || " ")}${state.input.substring(state.inputCaretPos + 1)}`

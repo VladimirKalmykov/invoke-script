@@ -28,9 +28,8 @@ module.exports = () => {
     case PHASES.SELECT_SCRIPT:
       content = `${renderInputQuery(state)}
         
-              ${renderScriptsList(state)}
-              ${renderDescription(state)}
-            `;
+${renderScriptsList(state)}
+${renderDescription(state)}`;
       break;
     case PHASES.ENTER_ARGS:
       if (cachedPhase !== state.phase) {
@@ -43,6 +42,7 @@ module.exports = () => {
     case PHASES.RUN:
       if (cachedPhase !== state.phase) {
         cachedPhase = state.phase;
+        logUpdate.clear();
         logUpdate.done();
       }
       break;

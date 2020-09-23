@@ -14,6 +14,10 @@ const findLocalScripts = require(path.join(
   process.env.INVOKE_SCRIPT_CORE,
   "find-local-scripts"
 ));
+const findLocalScript = require(path.join(
+  process.env.INVOKE_SCRIPT_CORE,
+  "find-local-script"
+));
 
 const runScript = require(path.join(
   process.env.INVOKE_SCRIPT_CORE,
@@ -25,18 +29,21 @@ function phaseMiddleware(store, action) {
 
   if (state.phase === PHASES.SELECT_SCRIPT) {
     switch (action.type) {
+    /* User input letters */
     case ACTIONS.INPUT:
       store.dispatch({
         type: ACTIONS.SETQUERY,
         value: state.input + action.value
       });
       break;
+    /* User press backspace or delete */
     case ACTIONS.BACKSPACE:
       store.dispatch({
         type: ACTIONS.SETQUERY,
         value: state.input.substring(0, state.input.length - 1)
       });
       break;
+    /* Set query */
     case ACTIONS.SETQUERY: {
       const pattern = `${action.value ? `*${action.value}` : ""}*`;
 
@@ -47,27 +54,58 @@ function phaseMiddleware(store, action) {
         match: pattern,
         keywords: false
       })
-        .then(scripts => {
+        .then(plainScripts => {
+          /* Derive by groups */
+          const locationIndexesInGroups = {};
+          const groups = [];
+
+          for (let i = 0; i < plainScripts.length; i++) {
+            if (!locationIndexesInGroups.hasOwnProperty(plainScripts[i].location)) {
+              locationIndexesInGroups[plainScripts[i].location] = groups.length;
+              groups.push({
+                path: plainScripts[i].location,
+                scripts: []
+              });
+            }
+
+            groups[locationIndexesInGroups[plainScripts[i].location]].scripts.push(plainScripts[i]);
+          }
+
+          groups.map(group => {
+            /* Sort by rating and location */
+            group.scripts.sort((script1, script2) => {
+              if (script2.stats.executedTimes === script1.stats.executedTimes) {
+                return 0;
+              }
+
+              return script2.stats.executedTimes > script1.stats.executedTimes
+                ? 1
+                : -1;
+            });
+
+            return group;
+          });
+
           store.dispatch({
-            type: ACTIONS.UPDATE_SCRIPTS,
-            value: scripts
+            type: ACTIONS.UPDATE_SCRIPT_GROUPS,
+            value: groups
           });
         });
     }
       break;
+    /* User accept selected script */
     case ACTIONS.ACCEPT:
-      if (state.selectedScriptIndex >= 0 && state.selectedScriptIndex <= state.scripts.length - 1) {
+      if (state.selectedScriptIndex >= 0 && state.selectedScriptIndex <= state.scriptGroups.length - 1) {
         store.dispatch({
           type: ACTIONS.SET_PHASE,
           value: PHASES.ENTER_ARGS
         });
       }
       break;
-    default:
     case ACTIONS.SET_PHASE:
       if (action.value === PHASES.ENTER_ARGS) {
         /* Load script info */
-        exec(`invoke ${state.scripts[state.selectedScriptIndex].path} --help`, {
+        exec(`invoke ${state.scriptGroups[state.selectedScriptGroupIndex].scripts[state.selectedScriptIndex].path} --help`, {
           cwd: process.cwd(),
           charset: "utf-8"
         }, (error, data) => {
@@ -76,15 +114,11 @@ function phaseMiddleware(store, action) {
               type: ACTIONS.SET_HELP_INFO,
               value: data
             });
-          } else {
-            store.dispatch({
-              type: ACTIONS.LOG,
-              name: "error",
-              value: error.message
-            });
           }
         });
       }
+      break;
+    default:
       break;
     }
   } else if (state.phase === PHASES.ENTER_ARGS) {
@@ -93,11 +127,17 @@ function phaseMiddleware(store, action) {
       /* Execute command */
       const args = parseArgsStringToArgv(state.input);
 
-      store.dispatch({
-        type: ACTIONS.RUN_SCRIPT,
-        script: state.scripts[state.selectedScriptIndex].path,
-        args
-      });
+      findLocalScript(state.scriptGroups[state.selectedScriptGroupIndex].scripts[state.selectedScriptIndex].name)
+        .then(scriptBinaryPath => {
+          store.dispatch({
+            type: ACTIONS.RUN_SCRIPT,
+            script: scriptBinaryPath,
+            args
+          });
+        })
+        .catch(e => {
+          throw e;
+        });
       break;
     }
     default:
@@ -114,7 +154,7 @@ module.exports = store => {
       store.dispatch({
         type: ACTIONS.ACCEPT
       });
-    } else if (ch === "\u0008") {
+    } else if (ch === "\u0008" || ch === "\u007f") {
       store.dispatch({
         type: ACTIONS.BACKSPACE
       });
@@ -175,6 +215,7 @@ module.exports = store => {
     }
       break;
     case ACTIONS.RUN_SCRIPT:
+      console.clear();
       process.stdin.off("data", onStdinDataHandler);
       runScript(action.script, action.args, {
         cwd: process.cwd()

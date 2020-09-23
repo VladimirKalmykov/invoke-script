@@ -49,8 +49,9 @@ const reducer = (state = {
   phase: PHASES.SELECT_SCRIPT,
   input: "",
   inputCaretPos: 0,
-  scripts: [],
+  scriptGroups: [],
   selectedScriptIndex: 0,
+  selectedScriptGroupIndex: 0,
   debugLog: {},
   helpInfo: "No help info provided",
   args

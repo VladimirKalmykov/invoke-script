@@ -1,4 +1,3 @@
-
 const Bailout = require("./bailout");
 const resolveWin32Interpreter = require("./win/resolveInterpreter");
 const {
@@ -12,7 +11,7 @@ module.exports = async function runScript(scriptPath, args, options = {}) {
    * provide possibility to use
    * this API from executed script
    */
-  const env = options.env || {};
+  const env = options.env || Object.create(process.env);
 
   env.INVOKE_SCRIPT_CORE = __dirname;
 

@@ -5,9 +5,20 @@ const chalk = require(path.join(
   "chalk"
 ));
 
+const builtInPath = path.dirname(require.resolve("@invoke-script/scripts"));
+
 module.exports = function renderScriptsList(state) {
-  return state.scripts.map((variant, index) => (index === state.selectedScriptIndex
-    ? chalk.black.bgGreen(variant.name)
-    : variant.name))
-    .join("\t");
+  /* Sort by location */
+
+  return state.scriptGroups.map((group, groupIndex) => {
+    const scriptsText = group.scripts.map((variant, index) => (index === state.selectedScriptIndex && groupIndex === state.selectedScriptGroupIndex
+      ? chalk.black.bgGreen(variant.name)
+      : variant.name))
+      .join(" ");
+
+    return `${chalk.gray(group.path.startsWith(builtInPath) ? "Built-in" : group.path)}
+    
+${scriptsText}`;
+  })
+    .join("\n\n");
 };
