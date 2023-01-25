@@ -1,6 +1,6 @@
 {
   "name": "@invoke-script/from-scope",
-  "version": "0.0.1-alfa",
+  "version": "0.0.1-alpha.0",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -12,6 +12,6 @@
   "author": "Vladimir Kalmykov <vladimirmorulus@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@invoke-script/core": "0.0.1-alfa"
+    "@invoke-script/core": "^0.0.1-alpha.0"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@invoke-script/cli-router",
-  "version": "0.0.1-alfa",
+  "version": "0.0.1-alpha.0",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -12,9 +12,9 @@
   "author": "Vladimir Kalmykov <vladimirmorulus@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@invoke-script/core": "0.0.1-alfa",
-    "@invoke-script/cmd-create-script": "0.0.1-alfa",
-    "@invoke-script/from-scripts": "0.0.1-alfa",
-    "@invoke-script/from-absolute": "0.0.1-alfa"
+    "@invoke-script/cmd-create-script": "^0.0.1-alpha.0",
+    "@invoke-script/core": "^0.0.1-alpha.0",
+    "@invoke-script/from-absolute": "^0.0.1-alpha.0",
+    "@invoke-script/from-scripts": "^0.0.1-alpha.0"
   }
 }
