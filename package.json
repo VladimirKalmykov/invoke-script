@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "publish": "lerna publish --registry=http://localhost:4873"
+    "publish": "lerna publish --registry=http://localhost:4873 --force-publish=*"
   },
   "keywords": [
     "invoke-script"
