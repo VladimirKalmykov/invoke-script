@@ -1,0 +1,558 @@
+0 silly argv {
+0 silly argv   _: [ 'publish' ],
+0 silly argv   registry: 'http://localhost:4873',
+0 silly argv   'force-publish': '*',
+0 silly argv   forcePublish: '*',
+0 silly argv   composed: 'publish',
+0 silly argv   lernaVersion: '3.10.6',
+0 silly argv   '$0': 'node_modules\\lerna\\cli.js'
+0 silly argv }
+1 notice cli v3.10.6
+2 verbose rootPath F:\Projects\invoke-script
+3 verbose session 9e08eb4017c069c1
+4 verbose user-agent lerna/3.10.6/node@v18.12.1+x64 (win32)
+5 verbose git-describe undefined => "v0.0.1-alpha.0-2-g25981ba"
+6 silly git-describe parsed => {"lastTagName":"v0.0.1-alpha.0","lastVersion":"v0.0.1-alpha.0","refCount":"2","sha":"25981ba","isDirty":false}
+7 silly argv {
+7 silly argv   _: [ 'publish' ],
+7 silly argv   registry: 'http://localhost:4873',
+7 silly argv   'force-publish': '*',
+7 silly argv   forcePublish: '*',
+7 silly argv   composed: 'publish',
+7 silly argv   lernaVersion: '3.10.6'
+7 silly argv }
+8 verbose rootPath F:\Projects\invoke-script
+9 info current version 0.0.1-alpha.0
+10 silly isAnythingCommitted
+11 verbose isAnythingCommitted 1
+12 silly currentBranch
+13 verbose currentBranch alpha
+14 silly remoteBranchExists
+15 silly isBehindUpstream
+16 silly isBehindUpstream alpha is behind origin/alpha by 0 commit(s) and ahead by 0
+17 silly hasTags
+18 verbose hasTags true
+19 silly git-describe.sync "v0.0.1-alpha.0-2-g25981ba" => {"lastTagName":"v0.0.1-alpha.0","lastVersion":"v0.0.1-alpha.0","refCount":"2","sha":"25981ba","isDirty":false}
+20 info Looking for changed packages since v0.0.1-alpha.0
+21 warn force-publish all packages
+22 verbose updated @invoke-script/cli-router
+23 verbose updated @invoke-script/cli
+24 verbose updated @invoke-script/cmd-create-script
+25 verbose updated @invoke-script/core
+26 verbose updated @invoke-script/from-absolute
+27 verbose updated @invoke-script/from-ftp
+28 verbose updated @invoke-script/from-gist
+29 verbose updated @invoke-script/from-github
+30 verbose updated @invoke-script/from-http
+31 verbose updated @invoke-script/from-https
+32 verbose updated @invoke-script/from-npm
+33 verbose updated @invoke-script/from-s3
+34 verbose updated @invoke-script/from-scope
+35 verbose updated @invoke-script/from-scripts
+36 verbose updated @invoke-script/from-ssh
+37 verbose updated @invoke-script/run
+38 verbose updated @invoke-script/scripts
+39 verbose git-describe undefined => "v0.0.1-alpha.0-2-g25981ba"
+40 silly git-describe parsed => {"lastTagName":"v0.0.1-alpha.0","lastVersion":"v0.0.1-alpha.0","refCount":"2","sha":"25981ba","isDirty":false}
+41 silly batched [
+41 silly batched   PackageGraphNode {
+41 silly batched     name: '@invoke-script/scripts',
+41 silly batched     externalDependencies: Map(4) {
+41 silly batched       'cliui' => [Object],
+41 silly batched       'log-update' => [Object],
+41 silly batched       'redux' => [Object],
+41 silly batched       'string-argv' => [Object]
+41 silly batched     },
+41 silly batched     localDependencies: Map(0) {},
+41 silly batched     localDependents: Map(1) { '@invoke-script/core' => [PackageGraphNode] }
+41 silly batched   }
+41 silly batched ]
+42 silly batched [
+42 silly batched   PackageGraphNode {
+42 silly batched     name: '@invoke-script/core',
+42 silly batched     externalDependencies: Map(11) {
+42 silly batched       'chalk' => [Object],
+42 silly batched       'chokidar' => [Object],
+42 silly batched       'cliui' => [Object],
+42 silly batched       'find-parent-dir' => [Object],
+42 silly batched       'ini' => [Object],
+42 silly batched       'minimatch' => [Object],
+42 silly batched       'minimist' => [Object],
+42 silly batched       'prompt-confirm' => [Object],
+42 silly batched       'shelljs' => [Object],
+42 silly batched       'single-line-log' => [Object],
+42 silly batched       'tmp' => [Object]
+42 silly batched     },
+42 silly batched     localDependencies: Map(0) {},
+42 silly batched     localDependents: Map(14) {
+42 silly batched       '@invoke-script/cli-router' => [PackageGraphNode],
+42 silly batched       '@invoke-script/cmd-create-script' => [PackageGraphNode],
+42 silly batched       '@invoke-script/from-absolute' => [PackageGraphNode],
+42 silly batched       '@invoke-script/from-ftp' => [PackageGraphNode],
+42 silly batched       '@invoke-script/from-gist' => [PackageGraphNode],
+42 silly batched       '@invoke-script/from-github' => [PackageGraphNode],
+42 silly batched       '@invoke-script/from-http' => [PackageGraphNode],
+42 silly batched       '@invoke-script/from-https' => [PackageGraphNode],
+42 silly batched       '@invoke-script/from-npm' => [PackageGraphNode],
+42 silly batched       '@invoke-script/from-s3' => [PackageGraphNode],
+42 silly batched       '@invoke-script/from-scope' => [PackageGraphNode],
+42 silly batched       '@invoke-script/from-scripts' => [PackageGraphNode],
+42 silly batched       '@invoke-script/from-ssh' => [PackageGraphNode],
+42 silly batched       '@invoke-script/run' => [PackageGraphNode]
+42 silly batched     }
+42 silly batched   }
+42 silly batched ]
+43 silly batched [
+43 silly batched   PackageGraphNode {
+43 silly batched     name: '@invoke-script/cmd-create-script',
+43 silly batched     externalDependencies: Map(0) {},
+43 silly batched     localDependencies: Map(0) {},
+43 silly batched     localDependents: Map(1) { '@invoke-script/cli-router' => [PackageGraphNode] }
+43 silly batched   },
+43 silly batched   PackageGraphNode {
+43 silly batched     name: '@invoke-script/from-absolute',
+43 silly batched     externalDependencies: Map(0) {},
+43 silly batched     localDependencies: Map(0) {},
+43 silly batched     localDependents: Map(1) { '@invoke-script/cli-router' => [PackageGraphNode] }
+43 silly batched   },
+43 silly batched   PackageGraphNode {
+43 silly batched     name: '@invoke-script/from-ftp',
+43 silly batched     externalDependencies: Map(0) {},
+43 silly batched     localDependencies: Map(0) {},
+43 silly batched     localDependents: Map(0) {}
+43 silly batched   },
+43 silly batched   PackageGraphNode {
+43 silly batched     name: '@invoke-script/from-gist',
+43 silly batched     externalDependencies: Map(0) {},
+43 silly batched     localDependencies: Map(0) {},
+43 silly batched     localDependents: Map(0) {}
+43 silly batched   },
+43 silly batched   PackageGraphNode {
+43 silly batched     name: '@invoke-script/from-github',
+43 silly batched     externalDependencies: Map(0) {},
+43 silly batched     localDependencies: Map(0) {},
+43 silly batched     localDependents: Map(0) {}
+43 silly batched   },
+43 silly batched   PackageGraphNode {
+43 silly batched     name: '@invoke-script/from-http',
+43 silly batched     externalDependencies: Map(0) {},
+43 silly batched     localDependencies: Map(0) {},
+43 silly batched     localDependents: Map(0) {}
+43 silly batched   },
+43 silly batched   PackageGraphNode {
+43 silly batched     name: '@invoke-script/from-https',
+43 silly batched     externalDependencies: Map(0) {},
+43 silly batched     localDependencies: Map(0) {},
+43 silly batched     localDependents: Map(0) {}
+43 silly batched   },
+43 silly batched   PackageGraphNode {
+43 silly batched     name: '@invoke-script/from-npm',
+43 silly batched     externalDependencies: Map(0) {},
+43 silly batched     localDependencies: Map(0) {},
+43 silly batched     localDependents: Map(0) {}
+43 silly batched   },
+43 silly batched   PackageGraphNode {
+43 silly batched     name: '@invoke-script/from-s3',
+43 silly batched     externalDependencies: Map(0) {},
+43 silly batched     localDependencies: Map(0) {},
+43 silly batched     localDependents: Map(0) {}
+43 silly batched   },
+43 silly batched   PackageGraphNode {
+43 silly batched     name: '@invoke-script/from-scope',
+43 silly batched     externalDependencies: Map(0) {},
+43 silly batched     localDependencies: Map(0) {},
+43 silly batched     localDependents: Map(0) {}
+43 silly batched   },
+43 silly batched   PackageGraphNode {
+43 silly batched     name: '@invoke-script/from-scripts',
+43 silly batched     externalDependencies: Map(0) {},
+43 silly batched     localDependencies: Map(0) {},
+43 silly batched     localDependents: Map(1) { '@invoke-script/cli-router' => [PackageGraphNode] }
+43 silly batched   },
+43 silly batched   PackageGraphNode {
+43 silly batched     name: '@invoke-script/from-ssh',
+43 silly batched     externalDependencies: Map(0) {},
+43 silly batched     localDependencies: Map(0) {},
+43 silly batched     localDependents: Map(0) {}
+43 silly batched   },
+43 silly batched   PackageGraphNode {
+43 silly batched     name: '@invoke-script/run',
+43 silly batched     externalDependencies: Map(0) {},
+43 silly batched     localDependencies: Map(0) {},
+43 silly batched     localDependents: Map(0) {}
+43 silly batched   }
+43 silly batched ]
+44 silly batched [
+44 silly batched   PackageGraphNode {
+44 silly batched     name: '@invoke-script/cli-router',
+44 silly batched     externalDependencies: Map(0) {},
+44 silly batched     localDependencies: Map(0) {},
+44 silly batched     localDependents: Map(1) { '@invoke-script/cli' => [PackageGraphNode] }
+44 silly batched   }
+44 silly batched ]
+45 silly batched [
+45 silly batched   PackageGraphNode {
+45 silly batched     name: '@invoke-script/cli',
+45 silly batched     externalDependencies: Map(0) {},
+45 silly batched     localDependencies: Map(0) {},
+45 silly batched     localDependents: Map(0) {}
+45 silly batched   }
+45 silly batched ]
+46 silly lifecycle No script for "preversion" in "invoke-script-private", continuing
+47 silly lifecycle No script for "preversion" in "@invoke-script/scripts", continuing
+48 silly lifecycle No script for "version" in "@invoke-script/scripts", continuing
+49 silly lifecycle No script for "preversion" in "@invoke-script/core", continuing
+50 silly lifecycle No script for "version" in "@invoke-script/core", continuing
+51 silly lifecycle No script for "preversion" in "@invoke-script/cmd-create-script", continuing
+52 silly lifecycle No script for "preversion" in "@invoke-script/from-absolute", continuing
+53 silly lifecycle No script for "preversion" in "@invoke-script/from-ftp", continuing
+54 silly lifecycle No script for "preversion" in "@invoke-script/from-gist", continuing
+55 silly lifecycle No script for "preversion" in "@invoke-script/from-github", continuing
+56 silly lifecycle No script for "preversion" in "@invoke-script/from-http", continuing
+57 silly lifecycle No script for "preversion" in "@invoke-script/from-https", continuing
+58 silly lifecycle No script for "preversion" in "@invoke-script/from-npm", continuing
+59 silly lifecycle No script for "preversion" in "@invoke-script/from-s3", continuing
+60 silly lifecycle No script for "preversion" in "@invoke-script/from-scope", continuing
+61 silly lifecycle No script for "preversion" in "@invoke-script/from-scripts", continuing
+62 silly lifecycle No script for "preversion" in "@invoke-script/from-ssh", continuing
+63 silly lifecycle No script for "preversion" in "@invoke-script/run", continuing
+64 silly lifecycle No script for "version" in "@invoke-script/from-https", continuing
+65 silly lifecycle No script for "version" in "@invoke-script/cmd-create-script", continuing
+66 silly lifecycle No script for "version" in "@invoke-script/from-gist", continuing
+67 silly lifecycle No script for "version" in "@invoke-script/from-ftp", continuing
+68 silly lifecycle No script for "version" in "@invoke-script/from-npm", continuing
+69 silly lifecycle No script for "version" in "@invoke-script/from-absolute", continuing
+70 silly lifecycle No script for "version" in "@invoke-script/from-github", continuing
+71 silly lifecycle No script for "version" in "@invoke-script/from-scope", continuing
+72 silly lifecycle No script for "version" in "@invoke-script/from-scripts", continuing
+73 silly lifecycle No script for "version" in "@invoke-script/from-s3", continuing
+74 silly lifecycle No script for "version" in "@invoke-script/from-ssh", continuing
+75 silly lifecycle No script for "version" in "@invoke-script/from-http", continuing
+76 silly lifecycle No script for "version" in "@invoke-script/run", continuing
+77 silly lifecycle No script for "preversion" in "@invoke-script/cli-router", continuing
+78 silly lifecycle No script for "version" in "@invoke-script/cli-router", continuing
+79 silly lifecycle No script for "preversion" in "@invoke-script/cli", continuing
+80 silly lifecycle No script for "version" in "@invoke-script/cli", continuing
+81 silly lifecycle No script for "version" in "invoke-script-private", continuing
+82 silly gitAdd [
+82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\scripts\\package.json',
+82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\core\\package.json',
+82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-https\\package.json',
+82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\cmd-create-script\\package.json',
+82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-gist\\package.json',
+82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-ftp\\package.json',
+82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-npm\\package.json',
+82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-absolute\\package.json',
+82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-github\\package.json',
+82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-scope\\package.json',
+82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-scripts\\package.json',
+82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-s3\\package.json',
+82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-ssh\\package.json',
+82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-http\\package.json',
+82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\run\\package.json',
+82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\cli-router\\package.json',
+82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\cli\\package.json',
+82 silly gitAdd   'F:\\Projects\\invoke-script\\lerna.json'
+82 silly gitAdd ]
+83 silly gitCommit v0.0.2-alpha.0
+84 verbose git [ 'commit', '-m', 'v0.0.2-alpha.0' ]
+85 silly gitTag v0.0.2-alpha.0
+86 verbose git [ 'tag', 'v0.0.2-alpha.0', '-m', 'v0.0.2-alpha.0' ]
+87 silly lifecycle No script for "postversion" in "@invoke-script/cli-router", continuing
+88 silly lifecycle No script for "postversion" in "@invoke-script/cli", continuing
+89 silly lifecycle No script for "postversion" in "@invoke-script/cmd-create-script", continuing
+90 silly lifecycle No script for "postversion" in "@invoke-script/core", continuing
+91 silly lifecycle No script for "postversion" in "@invoke-script/from-absolute", continuing
+92 silly lifecycle No script for "postversion" in "@invoke-script/from-ftp", continuing
+93 silly lifecycle No script for "postversion" in "@invoke-script/from-gist", continuing
+94 silly lifecycle No script for "postversion" in "@invoke-script/from-github", continuing
+95 silly lifecycle No script for "postversion" in "@invoke-script/from-http", continuing
+96 silly lifecycle No script for "postversion" in "@invoke-script/from-https", continuing
+97 silly lifecycle No script for "postversion" in "@invoke-script/from-npm", continuing
+98 silly lifecycle No script for "postversion" in "@invoke-script/from-s3", continuing
+99 silly lifecycle No script for "postversion" in "@invoke-script/from-scope", continuing
+100 silly lifecycle No script for "postversion" in "@invoke-script/from-scripts", continuing
+101 silly lifecycle No script for "postversion" in "@invoke-script/from-ssh", continuing
+102 silly lifecycle No script for "postversion" in "@invoke-script/run", continuing
+103 silly lifecycle No script for "postversion" in "@invoke-script/scripts", continuing
+104 silly lifecycle No script for "postversion" in "invoke-script-private", continuing
+105 info git Pushing tags...
+106 silly gitPush origin alpha
+107 silly batched [
+107 silly batched   PackageGraphNode {
+107 silly batched     name: '@invoke-script/scripts',
+107 silly batched     externalDependencies: Map(4) {
+107 silly batched       'cliui' => [Object],
+107 silly batched       'log-update' => [Object],
+107 silly batched       'redux' => [Object],
+107 silly batched       'string-argv' => [Object]
+107 silly batched     },
+107 silly batched     localDependencies: Map(0) {},
+107 silly batched     localDependents: Map(1) { '@invoke-script/core' => [PackageGraphNode] }
+107 silly batched   }
+107 silly batched ]
+108 silly batched [
+108 silly batched   PackageGraphNode {
+108 silly batched     name: '@invoke-script/core',
+108 silly batched     externalDependencies: Map(11) {
+108 silly batched       'chalk' => [Object],
+108 silly batched       'chokidar' => [Object],
+108 silly batched       'cliui' => [Object],
+108 silly batched       'find-parent-dir' => [Object],
+108 silly batched       'ini' => [Object],
+108 silly batched       'minimatch' => [Object],
+108 silly batched       'minimist' => [Object],
+108 silly batched       'prompt-confirm' => [Object],
+108 silly batched       'shelljs' => [Object],
+108 silly batched       'single-line-log' => [Object],
+108 silly batched       'tmp' => [Object]
+108 silly batched     },
+108 silly batched     localDependencies: Map(0) {},
+108 silly batched     localDependents: Map(14) {
+108 silly batched       '@invoke-script/cli-router' => [PackageGraphNode],
+108 silly batched       '@invoke-script/cmd-create-script' => [PackageGraphNode],
+108 silly batched       '@invoke-script/from-absolute' => [PackageGraphNode],
+108 silly batched       '@invoke-script/from-ftp' => [PackageGraphNode],
+108 silly batched       '@invoke-script/from-gist' => [PackageGraphNode],
+108 silly batched       '@invoke-script/from-github' => [PackageGraphNode],
+108 silly batched       '@invoke-script/from-http' => [PackageGraphNode],
+108 silly batched       '@invoke-script/from-https' => [PackageGraphNode],
+108 silly batched       '@invoke-script/from-npm' => [PackageGraphNode],
+108 silly batched       '@invoke-script/from-s3' => [PackageGraphNode],
+108 silly batched       '@invoke-script/from-scope' => [PackageGraphNode],
+108 silly batched       '@invoke-script/from-scripts' => [PackageGraphNode],
+108 silly batched       '@invoke-script/from-ssh' => [PackageGraphNode],
+108 silly batched       '@invoke-script/run' => [PackageGraphNode]
+108 silly batched     }
+108 silly batched   }
+108 silly batched ]
+109 silly batched [
+109 silly batched   PackageGraphNode {
+109 silly batched     name: '@invoke-script/cmd-create-script',
+109 silly batched     externalDependencies: Map(0) {},
+109 silly batched     localDependencies: Map(0) {},
+109 silly batched     localDependents: Map(1) { '@invoke-script/cli-router' => [PackageGraphNode] }
+109 silly batched   },
+109 silly batched   PackageGraphNode {
+109 silly batched     name: '@invoke-script/from-absolute',
+109 silly batched     externalDependencies: Map(0) {},
+109 silly batched     localDependencies: Map(0) {},
+109 silly batched     localDependents: Map(1) { '@invoke-script/cli-router' => [PackageGraphNode] }
+109 silly batched   },
+109 silly batched   PackageGraphNode {
+109 silly batched     name: '@invoke-script/from-ftp',
+109 silly batched     externalDependencies: Map(0) {},
+109 silly batched     localDependencies: Map(0) {},
+109 silly batched     localDependents: Map(0) {}
+109 silly batched   },
+109 silly batched   PackageGraphNode {
+109 silly batched     name: '@invoke-script/from-gist',
+109 silly batched     externalDependencies: Map(0) {},
+109 silly batched     localDependencies: Map(0) {},
+109 silly batched     localDependents: Map(0) {}
+109 silly batched   },
+109 silly batched   PackageGraphNode {
+109 silly batched     name: '@invoke-script/from-github',
+109 silly batched     externalDependencies: Map(0) {},
+109 silly batched     localDependencies: Map(0) {},
+109 silly batched     localDependents: Map(0) {}
+109 silly batched   },
+109 silly batched   PackageGraphNode {
+109 silly batched     name: '@invoke-script/from-http',
+109 silly batched     externalDependencies: Map(0) {},
+109 silly batched     localDependencies: Map(0) {},
+109 silly batched     localDependents: Map(0) {}
+109 silly batched   },
+109 silly batched   PackageGraphNode {
+109 silly batched     name: '@invoke-script/from-https',
+109 silly batched     externalDependencies: Map(0) {},
+109 silly batched     localDependencies: Map(0) {},
+109 silly batched     localDependents: Map(0) {}
+109 silly batched   },
+109 silly batched   PackageGraphNode {
+109 silly batched     name: '@invoke-script/from-npm',
+109 silly batched     externalDependencies: Map(0) {},
+109 silly batched     localDependencies: Map(0) {},
+109 silly batched     localDependents: Map(0) {}
+109 silly batched   },
+109 silly batched   PackageGraphNode {
+109 silly batched     name: '@invoke-script/from-s3',
+109 silly batched     externalDependencies: Map(0) {},
+109 silly batched     localDependencies: Map(0) {},
+109 silly batched     localDependents: Map(0) {}
+109 silly batched   },
+109 silly batched   PackageGraphNode {
+109 silly batched     name: '@invoke-script/from-scope',
+109 silly batched     externalDependencies: Map(0) {},
+109 silly batched     localDependencies: Map(0) {},
+109 silly batched     localDependents: Map(0) {}
+109 silly batched   },
+109 silly batched   PackageGraphNode {
+109 silly batched     name: '@invoke-script/from-scripts',
+109 silly batched     externalDependencies: Map(0) {},
+109 silly batched     localDependencies: Map(0) {},
+109 silly batched     localDependents: Map(1) { '@invoke-script/cli-router' => [PackageGraphNode] }
+109 silly batched   },
+109 silly batched   PackageGraphNode {
+109 silly batched     name: '@invoke-script/from-ssh',
+109 silly batched     externalDependencies: Map(0) {},
+109 silly batched     localDependencies: Map(0) {},
+109 silly batched     localDependents: Map(0) {}
+109 silly batched   },
+109 silly batched   PackageGraphNode {
+109 silly batched     name: '@invoke-script/run',
+109 silly batched     externalDependencies: Map(0) {},
+109 silly batched     localDependencies: Map(0) {},
+109 silly batched     localDependents: Map(0) {}
+109 silly batched   }
+109 silly batched ]
+110 silly batched [
+110 silly batched   PackageGraphNode {
+110 silly batched     name: '@invoke-script/cli-router',
+110 silly batched     externalDependencies: Map(0) {},
+110 silly batched     localDependencies: Map(0) {},
+110 silly batched     localDependents: Map(1) { '@invoke-script/cli' => [PackageGraphNode] }
+110 silly batched   }
+110 silly batched ]
+111 silly batched [
+111 silly batched   PackageGraphNode {
+111 silly batched     name: '@invoke-script/cli',
+111 silly batched     externalDependencies: Map(0) {},
+111 silly batched     localDependencies: Map(0) {},
+111 silly batched     localDependents: Map(0) {}
+111 silly batched   }
+111 silly batched ]
+112 info publish Publishing packages to npm...
+113 notice Skipping all user and access validation due to third-party registry
+114 notice Make sure you're authenticated properly ¯\_(ツ)_/¯
+115 warn ENOLICENSE Packages @invoke-script/cli-router, @invoke-script/cli, @invoke-script/cmd-create-script, @invoke-script/core, @invoke-script/from-absolute, @invoke-script/from-ftp, @invoke-script/from-gist, @invoke-script/from-github, @invoke-script/from-http, @invoke-script/from-https, @invoke-script/from-npm, @invoke-script/from-s3, @invoke-script/from-scope, @invoke-script/from-scripts, @invoke-script/from-ssh, @invoke-script/run, @invoke-script/scripts are missing a license
+116 silly getCurrentSHA
+117 verbose getCurrentSHA d66c9405f8852414f8e2b8f858a932b0920e52ad
+118 warn lifecycle Skipping root "prepublish" because it has already been called
+119 silly lifecycle No script for "prepare" in "invoke-script-private", continuing
+120 silly lifecycle No script for "prepublishOnly" in "invoke-script-private", continuing
+121 silly lifecycle No script for "prepack" in "invoke-script-private", continuing
+122 verbose pack-directory packages\scripts
+123 silly lifecycle No script for "prepublish" in "@invoke-script/scripts", continuing
+124 silly lifecycle No script for "prepare" in "@invoke-script/scripts", continuing
+125 silly lifecycle No script for "prepublishOnly" in "@invoke-script/scripts", continuing
+126 silly lifecycle No script for "prepack" in "@invoke-script/scripts", continuing
+127 silly lifecycle No script for "postpack" in "@invoke-script/scripts", continuing
+128 verbose packed @invoke-script/scripts packages\scripts
+129 verbose pack-directory packages\core
+130 silly lifecycle No script for "prepublish" in "@invoke-script/core", continuing
+131 silly lifecycle No script for "prepare" in "@invoke-script/core", continuing
+132 silly lifecycle No script for "prepublishOnly" in "@invoke-script/core", continuing
+133 silly lifecycle No script for "prepack" in "@invoke-script/core", continuing
+134 silly lifecycle No script for "postpack" in "@invoke-script/core", continuing
+135 verbose packed @invoke-script/core packages\core
+136 verbose pack-directory packages\cmd-create-script
+137 verbose pack-directory packages\from-absolute
+138 verbose pack-directory packages\from-ftp
+139 verbose pack-directory packages\from-gist
+140 verbose pack-directory packages\from-github
+141 verbose pack-directory packages\from-http
+142 verbose pack-directory packages\from-https
+143 verbose pack-directory packages\from-npm
+144 verbose pack-directory packages\from-s3
+145 verbose pack-directory packages\from-scope
+146 silly lifecycle No script for "prepublish" in "@invoke-script/cmd-create-script", continuing
+147 silly lifecycle No script for "prepublish" in "@invoke-script/from-absolute", continuing
+148 silly lifecycle No script for "prepublish" in "@invoke-script/from-ftp", continuing
+149 silly lifecycle No script for "prepublish" in "@invoke-script/from-gist", continuing
+150 silly lifecycle No script for "prepublish" in "@invoke-script/from-github", continuing
+151 silly lifecycle No script for "prepublish" in "@invoke-script/from-http", continuing
+152 silly lifecycle No script for "prepublish" in "@invoke-script/from-https", continuing
+153 silly lifecycle No script for "prepublish" in "@invoke-script/from-npm", continuing
+154 silly lifecycle No script for "prepublish" in "@invoke-script/from-s3", continuing
+155 silly lifecycle No script for "prepublish" in "@invoke-script/from-scope", continuing
+156 silly lifecycle No script for "prepare" in "@invoke-script/cmd-create-script", continuing
+157 silly lifecycle No script for "prepare" in "@invoke-script/from-absolute", continuing
+158 silly lifecycle No script for "prepare" in "@invoke-script/from-ftp", continuing
+159 silly lifecycle No script for "prepare" in "@invoke-script/from-gist", continuing
+160 silly lifecycle No script for "prepare" in "@invoke-script/from-github", continuing
+161 silly lifecycle No script for "prepare" in "@invoke-script/from-http", continuing
+162 silly lifecycle No script for "prepare" in "@invoke-script/from-https", continuing
+163 silly lifecycle No script for "prepare" in "@invoke-script/from-npm", continuing
+164 silly lifecycle No script for "prepare" in "@invoke-script/from-s3", continuing
+165 silly lifecycle No script for "prepare" in "@invoke-script/from-scope", continuing
+166 silly lifecycle No script for "prepublishOnly" in "@invoke-script/cmd-create-script", continuing
+167 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-ftp", continuing
+168 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-absolute", continuing
+169 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-https", continuing
+170 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-github", continuing
+171 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-http", continuing
+172 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-gist", continuing
+173 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-s3", continuing
+174 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-npm", continuing
+175 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-scope", continuing
+176 silly lifecycle No script for "prepack" in "@invoke-script/cmd-create-script", continuing
+177 silly lifecycle No script for "prepack" in "@invoke-script/from-ftp", continuing
+178 silly lifecycle No script for "prepack" in "@invoke-script/from-absolute", continuing
+179 silly lifecycle No script for "prepack" in "@invoke-script/from-https", continuing
+180 silly lifecycle No script for "prepack" in "@invoke-script/from-http", continuing
+181 silly lifecycle No script for "prepack" in "@invoke-script/from-github", continuing
+182 silly lifecycle No script for "prepack" in "@invoke-script/from-gist", continuing
+183 silly lifecycle No script for "prepack" in "@invoke-script/from-s3", continuing
+184 silly lifecycle No script for "prepack" in "@invoke-script/from-npm", continuing
+185 silly lifecycle No script for "prepack" in "@invoke-script/from-scope", continuing
+186 silly lifecycle No script for "postpack" in "@invoke-script/from-https", continuing
+187 verbose packed @invoke-script/from-https packages\from-https
+188 silly lifecycle No script for "postpack" in "@invoke-script/from-ftp", continuing
+189 verbose packed @invoke-script/from-ftp packages\from-ftp
+190 silly lifecycle No script for "postpack" in "@invoke-script/from-absolute", continuing
+191 verbose packed @invoke-script/from-absolute packages\from-absolute
+192 silly lifecycle No script for "postpack" in "@invoke-script/from-http", continuing
+193 verbose packed @invoke-script/from-http packages\from-http
+194 silly lifecycle No script for "postpack" in "@invoke-script/from-gist", continuing
+195 verbose packed @invoke-script/from-gist packages\from-gist
+196 silly lifecycle No script for "postpack" in "@invoke-script/from-github", continuing
+197 verbose packed @invoke-script/from-github packages\from-github
+198 silly lifecycle No script for "postpack" in "@invoke-script/from-s3", continuing
+199 verbose packed @invoke-script/from-s3 packages\from-s3
+200 silly lifecycle No script for "postpack" in "@invoke-script/from-npm", continuing
+201 verbose packed @invoke-script/from-npm packages\from-npm
+202 silly lifecycle No script for "postpack" in "@invoke-script/from-scope", continuing
+203 verbose packed @invoke-script/from-scope packages\from-scope
+204 silly lifecycle No script for "postpack" in "@invoke-script/cmd-create-script", continuing
+205 verbose packed @invoke-script/cmd-create-script packages\cmd-create-script
+206 verbose pack-directory packages\from-scripts
+207 silly lifecycle No script for "prepublish" in "@invoke-script/from-scripts", continuing
+208 silly lifecycle No script for "prepare" in "@invoke-script/from-scripts", continuing
+209 verbose pack-directory packages\from-ssh
+210 silly lifecycle No script for "prepublish" in "@invoke-script/from-ssh", continuing
+211 silly lifecycle No script for "prepare" in "@invoke-script/from-ssh", continuing
+212 verbose pack-directory packages\run
+213 silly lifecycle No script for "prepublish" in "@invoke-script/run", continuing
+214 silly lifecycle No script for "prepare" in "@invoke-script/run", continuing
+215 silly lifecycle No script for "prepublishOnly" in "@invoke-script/run", continuing
+216 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-scripts", continuing
+217 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-ssh", continuing
+218 silly lifecycle No script for "prepack" in "@invoke-script/run", continuing
+219 silly lifecycle No script for "prepack" in "@invoke-script/from-scripts", continuing
+220 silly lifecycle No script for "prepack" in "@invoke-script/from-ssh", continuing
+221 silly lifecycle No script for "postpack" in "@invoke-script/run", continuing
+222 verbose packed @invoke-script/run packages\run
+223 silly lifecycle No script for "postpack" in "@invoke-script/from-ssh", continuing
+224 verbose packed @invoke-script/from-ssh packages\from-ssh
+225 silly lifecycle No script for "postpack" in "@invoke-script/from-scripts", continuing
+226 verbose packed @invoke-script/from-scripts packages\from-scripts
+227 verbose pack-directory packages\cli-router
+228 silly lifecycle No script for "prepublish" in "@invoke-script/cli-router", continuing
+229 silly lifecycle No script for "prepare" in "@invoke-script/cli-router", continuing
+230 silly lifecycle No script for "prepublishOnly" in "@invoke-script/cli-router", continuing
+231 silly lifecycle No script for "prepack" in "@invoke-script/cli-router", continuing
+232 silly lifecycle No script for "postpack" in "@invoke-script/cli-router", continuing
+233 verbose packed @invoke-script/cli-router packages\cli-router
+234 verbose pack-directory packages\cli
+235 silly lifecycle No script for "prepublish" in "@invoke-script/cli", continuing
+236 silly lifecycle No script for "prepare" in "@invoke-script/cli", continuing
+237 silly lifecycle No script for "prepublishOnly" in "@invoke-script/cli", continuing
+238 silly lifecycle No script for "prepack" in "@invoke-script/cli", continuing
+239 silly lifecycle No script for "postpack" in "@invoke-script/cli", continuing
+240 verbose packed @invoke-script/cli packages\cli
+241 silly lifecycle No script for "postpack" in "invoke-script-private", continuing
+242 verbose publish @invoke-script/scripts
+243 http fetch PUT 401 http://localhost:4873/@invoke-script%2fscripts 221ms
+244 error Error: Unable to authenticate, need: Basic, Bearer
+244 error     at F:\Projects\invoke-script\node_modules\npm-registry-fetch\check-response.js:94:17

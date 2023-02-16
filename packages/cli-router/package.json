@@ -16,5 +16,6 @@
     "@invoke-script/core": "^0.0.2-alpha.0",
     "@invoke-script/from-absolute": "^0.0.2-alpha.0",
     "@invoke-script/from-scripts": "^0.0.2-alpha.0"
-  }
+  },
+  "gitHead": "d66c9405f8852414f8e2b8f858a932b0920e52ad"
 }
