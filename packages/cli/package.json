@@ -15,5 +15,6 @@
   "dependencies": {
     "@invoke-script/cli-router": "^0.0.3-alpha.0"
   },
-  "gitHead": "d66c9405f8852414f8e2b8f858a932b0920e52ad"
+  "gitHead": "d66c9405f8852414f8e2b8f858a932b0920e52ad",
+  "bin": "node ./bin/cli2.js"
 }
