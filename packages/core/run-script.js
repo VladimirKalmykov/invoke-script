@@ -51,6 +51,7 @@ module.exports = async function runScript(scriptPath, args, options = {}) {
       });
     });
   }
+  case "linux":
   case "darwin": {
     return new Promise(resolve => {
       child = spawn(scriptPath, args, {
