@@ -1,6 +1,6 @@
 {
   "name": "@invoke-script/from-ftp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -12,7 +12,7 @@
   "author": "Vladimir Kalmykov <vladimirmorulus@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@invoke-script/core": "^0.1.1"
+    "@invoke-script/core": "^0.1.2"
   },
   "gitHead": "e97ed05694c2b22424e1dd28c0a7639a6d0294c5"
 }
