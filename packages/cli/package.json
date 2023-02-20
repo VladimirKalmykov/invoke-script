@@ -15,8 +15,11 @@
   "dependencies": {
     "@invoke-script/cli-router": "^0.1.2"
   },
-  "gitHead": "e97ed05694c2b22424e1dd28c0a7639a6d0294c5",
+  "gitHead": "4af0b60f7f3764c45be96e80de38469b15d6c3c9",
   "bin": {
     "invoke": "./bin/cli.js"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

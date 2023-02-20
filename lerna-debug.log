@@ -3,24 +3,26 @@
 0 silly argv   'force-publish': '*',
 0 silly argv   forcePublish: '*',
 0 silly argv   composed: 'publish',
+0 silly argv   '--': [ '--access=public' ],
 0 silly argv   lernaVersion: '3.10.6',
 0 silly argv   '$0': 'node_modules\\lerna\\cli.js'
 0 silly argv }
 1 notice cli v3.10.6
 2 verbose rootPath F:\Projects\invoke-script
-3 verbose session 0281e07b16cff449
+3 verbose session 1ca0d32766e0d706
 4 verbose user-agent lerna/3.10.6/node@v18.12.1+x64 (win32)
-5 verbose git-describe undefined => "v0.0.5-alpha.0-3-gc91152e"
-6 silly git-describe parsed => {"lastTagName":"v0.0.5-alpha.0","lastVersion":"v0.0.5-alpha.0","refCount":"3","sha":"c91152e","isDirty":false}
+5 verbose git-describe undefined => "v0.1.1-1-g0f5dc4d"
+6 silly git-describe parsed => {"lastTagName":"v0.1.1","lastVersion":"v0.1.1","refCount":"1","sha":"0f5dc4d","isDirty":false}
 7 silly argv {
 7 silly argv   _: [ 'publish' ],
 7 silly argv   'force-publish': '*',
 7 silly argv   forcePublish: '*',
 7 silly argv   composed: 'publish',
+7 silly argv   '--': [ '--access=public' ],
 7 silly argv   lernaVersion: '3.10.6'
 7 silly argv }
 8 verbose rootPath F:\Projects\invoke-script
-9 info current version 0.0.5-alpha.0
+9 info current version 0.1.1
 10 silly isAnythingCommitted
 11 verbose isAnythingCommitted 1
 12 silly currentBranch
@@ -30,8 +32,8 @@
 16 silly isBehindUpstream master is behind origin/master by 0 commit(s) and ahead by 0
 17 silly hasTags
 18 verbose hasTags true
-19 silly git-describe.sync "v0.0.5-alpha.0-3-gc91152e" => {"lastTagName":"v0.0.5-alpha.0","lastVersion":"v0.0.5-alpha.0","refCount":"3","sha":"c91152e","isDirty":false}
-20 info Looking for changed packages since v0.0.5-alpha.0
+19 silly git-describe.sync "v0.1.1-1-g0f5dc4d" => {"lastTagName":"v0.1.1","lastVersion":"v0.1.1","refCount":"1","sha":"0f5dc4d","isDirty":false}
+20 info Looking for changed packages since v0.1.1
 21 warn force-publish all packages
 22 verbose updated @invoke-script/cli-router
 23 verbose updated @invoke-script/cli
@@ -50,8 +52,8 @@
 36 verbose updated @invoke-script/from-ssh
 37 verbose updated @invoke-script/run
 38 verbose updated @invoke-script/scripts
-39 verbose git-describe undefined => "v0.0.5-alpha.0-3-gc91152e"
-40 silly git-describe parsed => {"lastTagName":"v0.0.5-alpha.0","lastVersion":"v0.0.5-alpha.0","refCount":"3","sha":"c91152e","isDirty":false}
+39 verbose git-describe undefined => "v0.1.1-1-g0f5dc4d"
+40 silly git-describe parsed => {"lastTagName":"v0.1.1","lastVersion":"v0.1.1","refCount":"1","sha":"0f5dc4d","isDirty":false}
 41 silly batched [
 41 silly batched   PackageGraphNode {
 41 silly batched     name: '@invoke-script/scripts',
@@ -215,18 +217,18 @@
 62 silly lifecycle No script for "preversion" in "@invoke-script/from-ssh", continuing
 63 silly lifecycle No script for "preversion" in "@invoke-script/run", continuing
 64 silly lifecycle No script for "version" in "@invoke-script/cmd-create-script", continuing
-65 silly lifecycle No script for "version" in "@invoke-script/from-http", continuing
+65 silly lifecycle No script for "version" in "@invoke-script/from-ftp", continuing
 66 silly lifecycle No script for "version" in "@invoke-script/from-https", continuing
-67 silly lifecycle No script for "version" in "@invoke-script/from-ftp", continuing
-68 silly lifecycle No script for "version" in "@invoke-script/from-scope", continuing
-69 silly lifecycle No script for "version" in "@invoke-script/from-gist", continuing
-70 silly lifecycle No script for "version" in "@invoke-script/from-absolute", continuing
-71 silly lifecycle No script for "version" in "@invoke-script/from-npm", continuing
-72 silly lifecycle No script for "version" in "@invoke-script/from-ssh", continuing
+67 silly lifecycle No script for "version" in "@invoke-script/from-gist", continuing
+68 silly lifecycle No script for "version" in "@invoke-script/from-http", continuing
+69 silly lifecycle No script for "version" in "@invoke-script/from-github", continuing
+70 silly lifecycle No script for "version" in "@invoke-script/from-npm", continuing
+71 silly lifecycle No script for "version" in "@invoke-script/from-absolute", continuing
+72 silly lifecycle No script for "version" in "@invoke-script/from-scope", continuing
 73 silly lifecycle No script for "version" in "@invoke-script/from-scripts", continuing
-74 silly lifecycle No script for "version" in "@invoke-script/from-s3", continuing
-75 silly lifecycle No script for "version" in "@invoke-script/from-github", continuing
-76 silly lifecycle No script for "version" in "@invoke-script/run", continuing
+74 silly lifecycle No script for "version" in "@invoke-script/run", continuing
+75 silly lifecycle No script for "version" in "@invoke-script/from-ssh", continuing
+76 silly lifecycle No script for "version" in "@invoke-script/from-s3", continuing
 77 silly lifecycle No script for "preversion" in "@invoke-script/cli-router", continuing
 78 silly lifecycle No script for "version" in "@invoke-script/cli-router", continuing
 79 silly lifecycle No script for "preversion" in "@invoke-script/cli", continuing
@@ -236,26 +238,26 @@
 82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\scripts\\package.json',
 82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\core\\package.json',
 82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\cmd-create-script\\package.json',
-82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-http\\package.json',
-82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-https\\package.json',
 82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-ftp\\package.json',
-82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-scope\\package.json',
+82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-https\\package.json',
 82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-gist\\package.json',
-82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-absolute\\package.json',
-82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-npm\\package.json',
-82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-ssh\\package.json',
-82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-scripts\\package.json',
-82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-s3\\package.json',
+82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-http\\package.json',
 82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-github\\package.json',
+82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-npm\\package.json',
+82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-absolute\\package.json',
+82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-scope\\package.json',
+82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-scripts\\package.json',
 82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\run\\package.json',
+82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-ssh\\package.json',
+82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\from-s3\\package.json',
 82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\cli-router\\package.json',
 82 silly gitAdd   'F:\\Projects\\invoke-script\\packages\\cli\\package.json',
 82 silly gitAdd   'F:\\Projects\\invoke-script\\lerna.json'
 82 silly gitAdd ]
-83 silly gitCommit v0.1.0
-84 verbose git [ 'commit', '-m', 'v0.1.0' ]
-85 silly gitTag v0.1.0
-86 verbose git [ 'tag', 'v0.1.0', '-m', 'v0.1.0' ]
+83 silly gitCommit v0.1.2
+84 verbose git [ 'commit', '-m', 'v0.1.2' ]
+85 silly gitTag v0.1.2
+86 verbose git [ 'tag', 'v0.1.2', '-m', 'v0.1.2' ]
 87 silly lifecycle No script for "postversion" in "@invoke-script/cli-router", continuing
 88 silly lifecycle No script for "postversion" in "@invoke-script/cli", continuing
 89 silly lifecycle No script for "postversion" in "@invoke-script/cmd-create-script", continuing
@@ -423,14 +425,14 @@
 112 info publish Publishing packages to npm...
 113 info Verifying npm credentials
 114 verbose Retrieving npm user profile
-115 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 853ms
+115 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 484ms
 116 silly npm profile get received {"tfa":false,"name":"morulus","email":"vladimirmorulus@gmail.com","email_verified":true,"created":"2015-02-26T01:35:42.503Z","updated":"2022-12-18T12:26:23.490Z","cidr_whitelist":null,"fullname":"Vladimir Kalmykov","homepage":"https://morulus.github.io/","freenode":"","twitter":"Morulus","github":"morulus"}
 117 silly npm whoami received {"username":"morulus"}
 118 silly verifyNpmPackageAccess
-119 http fetch GET 200 https://registry.npmjs.org/-/org/morulus/package?format=cli 334ms
+119 http fetch GET 200 https://registry.npmjs.org/-/org/morulus/package?format=cli 311ms
 120 warn ENOLICENSE Packages @invoke-script/cli-router, @invoke-script/cli, @invoke-script/cmd-create-script, @invoke-script/core, @invoke-script/from-absolute, @invoke-script/from-ftp, @invoke-script/from-gist, @invoke-script/from-github, @invoke-script/from-http, @invoke-script/from-https, @invoke-script/from-npm, @invoke-script/from-s3, @invoke-script/from-scope, @invoke-script/from-scripts, @invoke-script/from-ssh, @invoke-script/run, @invoke-script/scripts are missing a license
 121 silly getCurrentSHA
-122 verbose getCurrentSHA e97ed05694c2b22424e1dd28c0a7639a6d0294c5
+122 verbose getCurrentSHA 4af0b60f7f3764c45be96e80de38469b15d6c3c9
 123 silly lifecycle No script for "prepublish" in "invoke-script-private", continuing
 124 silly lifecycle No script for "prepare" in "invoke-script-private", continuing
 125 silly lifecycle No script for "prepublishOnly" in "invoke-script-private", continuing
@@ -480,43 +482,43 @@
 169 silly lifecycle No script for "prepare" in "@invoke-script/from-s3", continuing
 170 silly lifecycle No script for "prepare" in "@invoke-script/from-scope", continuing
 171 silly lifecycle No script for "prepublishOnly" in "@invoke-script/cmd-create-script", continuing
-172 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-ftp", continuing
-173 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-https", continuing
-174 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-absolute", continuing
-175 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-npm", continuing
-176 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-gist", continuing
-177 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-s3", continuing
-178 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-http", continuing
-179 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-github", continuing
+172 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-absolute", continuing
+173 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-ftp", continuing
+174 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-npm", continuing
+175 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-https", continuing
+176 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-github", continuing
+177 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-http", continuing
+178 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-gist", continuing
+179 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-s3", continuing
 180 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-scope", continuing
 181 silly lifecycle No script for "prepack" in "@invoke-script/cmd-create-script", continuing
-182 silly lifecycle No script for "prepack" in "@invoke-script/from-ftp", continuing
-183 silly lifecycle No script for "prepack" in "@invoke-script/from-https", continuing
-184 silly lifecycle No script for "prepack" in "@invoke-script/from-absolute", continuing
-185 silly lifecycle No script for "prepack" in "@invoke-script/from-npm", continuing
-186 silly lifecycle No script for "prepack" in "@invoke-script/from-s3", continuing
+182 silly lifecycle No script for "prepack" in "@invoke-script/from-absolute", continuing
+183 silly lifecycle No script for "prepack" in "@invoke-script/from-ftp", continuing
+184 silly lifecycle No script for "prepack" in "@invoke-script/from-npm", continuing
+185 silly lifecycle No script for "prepack" in "@invoke-script/from-https", continuing
+186 silly lifecycle No script for "prepack" in "@invoke-script/from-github", continuing
 187 silly lifecycle No script for "prepack" in "@invoke-script/from-http", continuing
 188 silly lifecycle No script for "prepack" in "@invoke-script/from-gist", continuing
-189 silly lifecycle No script for "prepack" in "@invoke-script/from-github", continuing
+189 silly lifecycle No script for "prepack" in "@invoke-script/from-s3", continuing
 190 silly lifecycle No script for "prepack" in "@invoke-script/from-scope", continuing
 191 silly lifecycle No script for "postpack" in "@invoke-script/from-absolute", continuing
 192 verbose packed @invoke-script/from-absolute packages\from-absolute
 193 silly lifecycle No script for "postpack" in "@invoke-script/from-ftp", continuing
 194 verbose packed @invoke-script/from-ftp packages\from-ftp
-195 silly lifecycle No script for "postpack" in "@invoke-script/from-s3", continuing
-196 verbose packed @invoke-script/from-s3 packages\from-s3
-197 silly lifecycle No script for "postpack" in "@invoke-script/from-https", continuing
-198 verbose packed @invoke-script/from-https packages\from-https
+195 silly lifecycle No script for "postpack" in "@invoke-script/from-github", continuing
+196 verbose packed @invoke-script/from-github packages\from-github
+197 silly lifecycle No script for "postpack" in "@invoke-script/from-http", continuing
+198 verbose packed @invoke-script/from-http packages\from-http
 199 silly lifecycle No script for "postpack" in "@invoke-script/from-npm", continuing
 200 verbose packed @invoke-script/from-npm packages\from-npm
-201 silly lifecycle No script for "postpack" in "@invoke-script/from-http", continuing
-202 verbose packed @invoke-script/from-http packages\from-http
-203 silly lifecycle No script for "postpack" in "@invoke-script/from-gist", continuing
-204 verbose packed @invoke-script/from-gist packages\from-gist
-205 silly lifecycle No script for "postpack" in "@invoke-script/cmd-create-script", continuing
-206 verbose packed @invoke-script/cmd-create-script packages\cmd-create-script
-207 silly lifecycle No script for "postpack" in "@invoke-script/from-github", continuing
-208 verbose packed @invoke-script/from-github packages\from-github
+201 silly lifecycle No script for "postpack" in "@invoke-script/cmd-create-script", continuing
+202 verbose packed @invoke-script/cmd-create-script packages\cmd-create-script
+203 silly lifecycle No script for "postpack" in "@invoke-script/from-https", continuing
+204 verbose packed @invoke-script/from-https packages\from-https
+205 silly lifecycle No script for "postpack" in "@invoke-script/from-gist", continuing
+206 verbose packed @invoke-script/from-gist packages\from-gist
+207 silly lifecycle No script for "postpack" in "@invoke-script/from-s3", continuing
+208 verbose packed @invoke-script/from-s3 packages\from-s3
 209 silly lifecycle No script for "postpack" in "@invoke-script/from-scope", continuing
 210 verbose packed @invoke-script/from-scope packages\from-scope
 211 verbose pack-directory packages\from-scripts
@@ -531,13 +533,13 @@
 220 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-scripts", continuing
 221 silly lifecycle No script for "prepublishOnly" in "@invoke-script/from-ssh", continuing
 222 silly lifecycle No script for "prepublishOnly" in "@invoke-script/run", continuing
-223 silly lifecycle No script for "prepack" in "@invoke-script/from-ssh", continuing
-224 silly lifecycle No script for "prepack" in "@invoke-script/from-scripts", continuing
-225 silly lifecycle No script for "prepack" in "@invoke-script/run", continuing
-226 silly lifecycle No script for "postpack" in "@invoke-script/from-ssh", continuing
-227 verbose packed @invoke-script/from-ssh packages\from-ssh
-228 silly lifecycle No script for "postpack" in "@invoke-script/from-scripts", continuing
-229 verbose packed @invoke-script/from-scripts packages\from-scripts
+223 silly lifecycle No script for "prepack" in "@invoke-script/from-scripts", continuing
+224 silly lifecycle No script for "prepack" in "@invoke-script/run", continuing
+225 silly lifecycle No script for "prepack" in "@invoke-script/from-ssh", continuing
+226 silly lifecycle No script for "postpack" in "@invoke-script/from-scripts", continuing
+227 verbose packed @invoke-script/from-scripts packages\from-scripts
+228 silly lifecycle No script for "postpack" in "@invoke-script/from-ssh", continuing
+229 verbose packed @invoke-script/from-ssh packages\from-ssh
 230 silly lifecycle No script for "postpack" in "@invoke-script/run", continuing
 231 verbose packed @invoke-script/run packages\run
 232 verbose pack-directory packages\cli-router
@@ -556,6 +558,6 @@
 245 verbose packed @invoke-script/cli packages\cli
 246 silly lifecycle No script for "postpack" in "invoke-script-private", continuing
 247 verbose publish @invoke-script/scripts
-248 http fetch PUT 402 https://registry.npmjs.org/@invoke-script%2fscripts 293ms
+248 http fetch PUT 402 https://registry.npmjs.org/@invoke-script%2fscripts 366ms
 249 error Error: 402 Payment Required - PUT https://registry.npmjs.org/@invoke-script%2fscripts - You must sign up for private packages
 249 error     at F:\Projects\invoke-script\node_modules\npm-registry-fetch\check-response.js:104:15
