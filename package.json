@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "publish-verdaccio": "lerna publish --registry=http://localhost:4873 --force-publish=*",
     "publish": "lerna publish",
-    "publish:force": "lerna publish from-package --yes --force-publish=* -- --access=public"
+    "publish:force:package": "lerna publish from-package --yes --force-publish=* -- --access=public",
+    "publish:patch": "lerna publish patch --message \"chore(release): publish %s\" --yes --force-publish=* -- --access=public"
   },
   "keywords": [
     "invoke-script"
