@@ -1,6 +1,6 @@
 {
   "name": "@invoke-script/cli-router",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -12,10 +12,10 @@
   "author": "Vladimir Kalmykov <vladimirmorulus@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@invoke-script/cmd-create-script": "^0.1.4",
-    "@invoke-script/core": "^0.1.4",
-    "@invoke-script/from-absolute": "^0.1.4",
-    "@invoke-script/from-scripts": "^0.1.4"
+    "@invoke-script/cmd-create-script": "^0.1.5",
+    "@invoke-script/core": "^0.1.5",
+    "@invoke-script/from-absolute": "^0.1.5",
+    "@invoke-script/from-scripts": "^0.1.5"
   },
   "gitHead": "09f035a960544340188a06453ff32aa2ad4c8d31",
   "publishConfig": {
