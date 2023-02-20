@@ -1,6 +1,6 @@
 {
   "name": "@invoke-script/from-ssh",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -12,7 +12,7 @@
   "author": "Vladimir Kalmykov <vladimirmorulus@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@invoke-script/core": "^0.1.2"
+    "@invoke-script/core": "^0.1.3"
   },
   "gitHead": "4af0b60f7f3764c45be96e80de38469b15d6c3c9",
   "publishConfig": {
