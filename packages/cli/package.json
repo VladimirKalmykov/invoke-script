@@ -1,6 +1,6 @@
 {
   "name": "@invoke-script/cli",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   "author": "Vladimir Kalmykov <vladimirmorulus@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@invoke-script/cli-router": "^0.1.3"
+    "@invoke-script/cli-router": "^0.1.4"
   },
   "gitHead": "3c2b3d2ceb52400b9997a545fa148e0c7ae566d3",
   "bin": {
