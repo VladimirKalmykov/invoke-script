@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "publish-verdaccio": "lerna publish --registry=http://localhost:4873 --force-publish=*",
-    "publish": "lerna publish"
+    "publish": "lerna publish",
+    "publish:force": "lerna publish --force-publish=*"
   },
   "keywords": [
     "invoke-script"
