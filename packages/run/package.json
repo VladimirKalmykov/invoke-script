@@ -1,6 +1,6 @@
 {
   "name": "@invoke-script/run",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -12,9 +12,9 @@
   "author": "Vladimir Kalmykov <vladimirmorulus@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@invoke-script/core": "^0.1.3"
+    "@invoke-script/core": "^0.1.5"
   },
-  "gitHead": "3c2b3d2ceb52400b9997a545fa148e0c7ae566d3",
+  "gitHead": "09f035a960544340188a06453ff32aa2ad4c8d31",
   "publishConfig": {
     "access": "public"
   }
