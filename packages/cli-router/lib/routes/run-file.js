@@ -1,6 +1,6 @@
 const path = require("path");
 
-/* Determine is script used in this request */
+/* Determine if script used in this request */
 function runCustomScript(argv) {
   const {
     query,
@@ -8,8 +8,10 @@ function runCustomScript(argv) {
     args
   } = require("@invoke-script/core/extract-argv")(argv);
 
+  const absQuery = query.startsWith(".") ? path.resolve(process.cwd(), query) : query;
+
   return require("@invoke-script/from-absolute")(
-    query,
+    absQuery,
     options,
     args
   );
@@ -27,7 +29,7 @@ module.exports = {
       }
     }
 
-    return path.isAbsolute(scriptName);
+    return path.isAbsolute(scriptName) || scriptName.startsWith(".");
   },
   description: "Run custom script",
   handler: runCustomScript
