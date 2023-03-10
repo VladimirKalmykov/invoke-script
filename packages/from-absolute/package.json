@@ -1,6 +1,6 @@
 {
   "name": "@invoke-script/from-absolute",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -12,7 +12,7 @@
   "author": "Vladimir Kalmykov <vladimirmorulus@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@invoke-script/core": "^0.1.5"
+    "@invoke-script/core": "^0.1.6"
   },
   "gitHead": "09f035a960544340188a06453ff32aa2ad4c8d31",
   "publishConfig": {
