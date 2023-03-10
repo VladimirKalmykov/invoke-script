@@ -1,0 +1,33 @@
+name: Deploy
+run-name: ${{ github.actor }} is deploying
+on:
+  push:
+    branches:
+      - force-publish
+env:
+  NPMTOKEN: ${{ secrets.NPMTOKEN }}
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    environment: production
+    concurrency: production
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.*'
+      - run: npm install
+      - run: npm run bootstrap
+        run: |
+          touch ~/.npmrc && cat >~/.npmrc <<EOL
+          //registry.npmjs.org/:_authToken=${{ secrets.NPMTOKEN }}}
+          EOL
+      - run: publish:force:package
+      - run: |
+          git config --global user.email "vladimirmorulus@gmail.com"
+          git config --global user.name "CI"
+      - run: git push
+
