@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "bootstrap": "lerna bootstrap",
+    "bootstrap:prod": "lerna bootstrap",
     "publish-verdaccio": "lerna publish --registry=http://localhost:4873 --force-publish=*",
     "publish": "lerna publish",
     "publish:force:package": "lerna publish from-package --yes --force-publish=* -- --access=public",

@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: '18.*'
       - run: yarn
-      - run: yarn run bootstrap
+      - run: yarn run bootstrap:prod
       - run: |
           touch ~/.npmrc && cat >~/.npmrc <<EOL
           //registry.npmjs.org/:_authToken=${{ secrets.NPMTOKEN }}}
