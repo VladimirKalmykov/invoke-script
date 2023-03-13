@@ -25,9 +25,9 @@ jobs:
           touch ~/.npmrc && cat >~/.npmrc <<EOL
           //registry.npmjs.org/:_authToken=${{ secrets.NPMTOKEN }}}
           EOL
-      - run: npm run publish:beta
       - run: |
-          git config --global user.email "vladimirmorulus@gmail.com"
-          git config --global user.name "CI"
+                git config --global user.email "vladimirmorulus@gmail.com"
+                git config --global user.name "CI"
+      - run: npm run publish:beta
       - run: git push
 
