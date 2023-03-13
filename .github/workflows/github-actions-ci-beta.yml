@@ -22,7 +22,7 @@ jobs:
       - run: yarn
       - run: |
           touch ~/.npmrc && cat >~/.npmrc <<EOL
-          //registry.npmjs.org/:_authToken=${{ secrets.NPMTOKEN }}}
+          //registry.npmjs.org/:_authToken=${{ secrets.NPMTOKEN }}
           EOL
       - run: yarn run bootstrap:prod
       - run: |
