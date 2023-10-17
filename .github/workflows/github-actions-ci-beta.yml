@@ -1,4 +1,4 @@
-name: Deploy
+name: Deploy beta
 run-name: ${{ github.actor }} is deploying
 on:
   push:
