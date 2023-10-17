@@ -11,7 +11,7 @@
     "publish": "lerna publish",
     "publish:force:package": "lerna publish from-package --yes --force-publish=* -- --access=public",
     "publish:patch": "lerna publish patch --message \"chore(release): publish %s\" --yes --force-publish=* -- --access=public",
-    "publish:beta": "lerna version --conventional-commits --conventional-prerelease --preid beta --yes && git commit -am \"chore: automatic up versions\" && lerna publish from-git --yes"
+    "publish:beta": "lerna version --conventional-commits --conventional-prerelease --preid beta --yes && lerna publish from-git --yes"
   },
   "keywords": [
     "invoke-script"
