@@ -26,6 +26,10 @@ jobs:
       - run: |
                 git config --global user.email "vladimirmorulus@gmail.com"
                 git config --global user.name "CI"
+      - run: git status
+      - run: publish:prepare-beta
+      - run: git status
+      - run: publish:beta
       - run: npm run publish:beta
       - run: git push
 
