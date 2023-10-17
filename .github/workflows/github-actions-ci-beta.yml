@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - beta
-env:
-  NPMTOKEN: ${{ secrets.NPMTOKEN }}
 jobs:
   build:
 
@@ -22,7 +20,7 @@ jobs:
       - run: yarn
       - run: |
           touch ~/.npmrc && cat >~/.npmrc <<EOL
-          //registry.npmjs.org/:_authToken=${{ secrets.NPMTOKEN }}
+          //registry.npmjs.org/:_authToken=${{ secrets.npm_token }}
           EOL
       - run: yarn run bootstrap:prod
       - run: |
