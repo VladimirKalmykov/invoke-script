@@ -1,6 +1,6 @@
 {
   "name": "@invoke-script/scripts",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "Build-in scripts",
   "main": "index.js",
   "scripts": {
