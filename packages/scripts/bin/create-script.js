@@ -72,7 +72,7 @@ const args = require("minimist")(process.argv.slice(2));
   const [ name ] = args._;
 
   /* Validate name */
-  if (!NAME_REGEX.test(name)) {
+  if (!name || !NAME_REGEX.test(name)) {
     echo("The script name is invalid");
     process.exit(1);
   }

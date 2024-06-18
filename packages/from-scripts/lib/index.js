@@ -38,6 +38,8 @@ module.exports = async function invokeScript(query, options, args) {
     };
   }
 
+  stats.scripts = stats.scripts || {};
+
   stats.scripts[scriptPath] = stats.scripts[scriptPath] || defaultScriptStats;
   stats.scripts[scriptPath].executedTimes += 1;
   stats.scripts[scriptPath].lastExecuteTimestamp = new Date().getTime();
