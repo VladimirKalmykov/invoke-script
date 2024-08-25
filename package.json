@@ -5,8 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bootstrap": "lerna bootstrap",
-    "bootstrap:prod": "lerna bootstrap",
     "publish-verdaccio": "lerna publish --registry=http://localhost:4873 --force-publish=*",
     "publish": "lerna publish",
     "publish:force:package": "lerna publish from-package --yes --force-publish=* -- --access=public",
@@ -24,7 +22,7 @@
     "eslint": "^4.19.1",
     "eslint-config-nodejs": "^2.0.0",
     "eslint-config-recommended": "^2.0.0",
-    "lerna": "6"
+    "lerna": "^8.1.8"
   },
   "workspaces": [
     "packages/*"

@@ -22,7 +22,6 @@ jobs:
           touch ~/.npmrc && cat >~/.npmrc <<EOL
           //registry.npmjs.org/:_authToken=${{ secrets.npm_token }}
           EOL
-      - run: yarn run bootstrap:prod
       - run: |
                 git config --global user.email "vladimirmorulus@gmail.com"
                 git config --global user.name "CI"
