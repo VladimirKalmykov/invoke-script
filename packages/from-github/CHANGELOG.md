@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.1.15-beta.0 (2024-08-25)
+
+
+### Bug Fixes
+
+* remove bootstrap and jump to lerna 8 ([d42a240](https://github.com/VladimirKalmykov/invoke-script/commit/d42a240ab4e2cd50d04dde55e33e1bc1d89c3d07))
+
+
+
+
+
 ## 0.1.14 (2023-10-19)
 
 **Note:** Version bump only for package @invoke-script/from-github
